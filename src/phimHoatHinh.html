@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="page_title">Phim Hoạt Hình</title>
+    <link rel="stylesheet" defer href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/style/style-Cartoon.css">
+    <link href="https://fonts.cdnfonts.com/css/jsmath-cmti10" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../asset/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body style="background-color: black;" !important>
+    <script src="../asset/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../asset/JQuery/jquery.js"></script>
+    <script src="../src/controller/main.js"></script>
+
+    <nav class="navbar navbar-expand-sm navbar-light p-0" style="position: fixed;background-color: black;">
+        <div class="container" style="height: 60px; max-width: 1220px; background-color: black;">
+            <a class="navbar-brand" href="home.html">
+                <img style="height: 60px; width: 60px" class="logo" src="../img/logo1-removebg-preview.png"
+                    alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarID">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="home.html" data-i18n="home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="phimmoi.html" data-i18n="new_films">Phim Mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="thinhhanh.html" data-i18n="trending">Thịnh Hành</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="genre">Thể
+                            Loại</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newCartoon" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hoạt Hình</a>
+                                    <a data-i18n="newRomance" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Tình
+                                        Cảm</a>
+                                    <a data-i18n="newHistorical" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Cổ trang</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newFantasy" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Viễn tưởng</a>
+                                    <a data-i18n="newWar" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Chiến Tranh</a>
+                                    <a data-i18n="newAction" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hành động</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newAdventure" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Phiêu Lưu</a>
+                                    <a data-i18n="newMartialArts" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Võ Thuật</a>
+                                    <a data-i18n="newHorror" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Kinh dị</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="country">Quốc
+                            Gia</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newWestern" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Âu Mỹ</a>
+                                    <a data-i18n="newChinese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Trung Quốc</a>
+                                    <a data-i18n="newKorean" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hàn Quốc</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newThai" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Thái Lan</a>
+                                    <a data-i18n="newVietnamese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Việt Nam</a>
+                                    <a data-i18n="newJapanese" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Nhật Bản</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newIndonesian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Indonesia</a>
+                                    <a data-i18n="newCambodian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Campuchia</a>
+                                    <a data-i18n="newLaotian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Lào</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex align-items-center ms-3">
+                <div class="search-box">
+                    <input id="search-input" type="text" placeholder="Tìm kiếm"
+                        data-i18n-placeholder="search_placeholder" />
+                    <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="position-relative">
+                    <a class="ms-3 text-light" id="languageToggle" style="display: inline-block; cursor: pointer"><i
+                            class="fa-solid fa-globe" style="font-size: 23px"></i></a>
+
+                    <div id="languageDropdown" style="
+                display: none;
+                position: absolute;
+                top: 42px;
+                background-color: rgba(0, 0, 0, 0.7);
+              ">
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="vi" data-i18n="vietnamese">Tiếng Việt</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="en" data-i18n="english">English</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="zh" data-i18n="chinese_simplified">简体中文</a></span>
+                    </div>
+                </div>
+
+                <a href="#" class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="fa-solid fa-user large-icon" style="font-size: 23px"></i>
+                </a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel" data-i18n="welcome_message">
+                        Chào mừng bạn!
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" class="auth-form">
+                        <h2 class="text-center mb-4" data-i18n="login_title">Đăng nhập</h2>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                data-i18n-placeholder="email_placeholder" />
+                            <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                                <span data-i18n="account">Tài khoản</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                                data-i18n-placeholder="password_placeholder" />
+                            <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="password">Password</span></label>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <input type="checkbox" id="rememberMe" />
+                                <label for="rememberMe" data-i18n="remember_me">Ghi nhớ</label>
+                            </div>
+                            <a href="#" data-i18n="forgot_password">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" data-i18n="login_button">
+                            Đăng nhập
+                        </button>
+                        <p class="text-center mt-3" data-i18n="or_login_with">
+                            Hoặc đăng nhập bằng
+                        </p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button type="button" class="btn btn-outline-primary" data-i18n="login_facebook">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-i18n="login_google">
+                                <i class="fa-brands fa-google"></i> Google
+                            </button>
+                        </div>
+                        <p class="text-center mt-3">
+                            <span data-i18n="no_account_yet">Chưa có tài khoản?</span>
+                            <a href="#" id="showRegisterForm" data-i18n="register_link">Đăng ký</a>
+                        </p>
+                    </form>
+
+                    <form id="registerForm" class="auth-form d-none">
+                        <h2 class="text-center mb-4" data-i18n="register_title">Đăng ký</h2>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                                data-i18n-placeholder="email_placeholder" />
+                            <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                                <span data-i18n="account">Tài khoản</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                                data-i18n-placeholder="password_placeholder" />
+                            <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="password">Password</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Password"
+                                data-i18n-placeholder="confirm_password_placeholder" />
+                            <label for="confirmPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="confirm_password">Xác nhận Mật khẩu</span></label>
+                        </div>
+                        <button type="submit" class="btn btn-secondary w-100" data-i18n="register_button">
+                            Đăng ký
+                        </button>
+                        <p class="text-center mt-3" data-i18n="or_register_with">
+                            Hoặc đăng ký bằng
+                        </p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button type="button" class="btn btn-outline-primary" data-i18n="register_facebook">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-i18n="register_google">
+                                <i class="fa-brands fa-google"></i> Google
+                            </button>
+                        </div>
+                        <p class="text-center mt-3">
+                            <span data-i18n="already_have_account">Đã có tài khoản?</span>
+                            <a href="#" id="showLoginForm" data-i18n="login_link">Đăng nhập</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="menuOverlay"></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-section">
+        <div class="container" style="max-width: 1220px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class=" breadcrumb-item"><a href="#" style="text-decoration: none;"><i class="fa fa-home fa-sm "
+                                aria-hidden="true"></i> <span data-i18n="breadcrumb_home">Trang
+                                chủ</span></a></li>
+                    <li class="breadcrumb-item"><a href="#" style="text-decoration: none;"
+                            data-i18n="breadcrumb_genre">Thể loại</a></li>
+                    <li class="breadcrumb-item active" style="color: rgb(125, 125, 125);"
+                        data-i18n="breadcrumb_cartoon_films">Phim Hoạt Hình</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="d-flex justify-content-center">
+        <div class="container_filter">
+            <div class="filter-section">
+                <div class="filter-row" id="filters">
+                    <div class="filter-item">
+                        <select class="form-control" id="filter-sort">
+                            <option value="none" data-i18n="sort_by">Sắp xếp</option>
+                            <option value="name-asc" data-i18n="sort_name_az">Tên A-Z</option>
+                            <option value="name-desc" data-i18n="sort_name_za">Tên Z-A</option>
+                            <option value="year-asc" data-i18n="sort_year_asc">Năm tăng dần</option>
+                            <option value="year-desc" data-i18n="sort_year_desc">Năm giảm dần</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="form-control" id="filter-format">
+                            <option value="none" data-i18n="format_all">Định dạng</option>
+                            <option value="Phim lẻ" data-i18n="format_single_film">Phim lẻ</option>
+                            <option value="Phim bộ" data-i18n="format_series_film">Phim bộ</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-item">
+                        <select class="form-control" id="filter-genre">
+                            <option value="none" data-i18n="genre_all">Thể loại</option>
+                            <option value="Hành động" data-i18n="genre_action">Hành động</option>
+                            <option value="Cổ trang" data-i18n="genre_historical">Cổ trang</option>
+                            <option value="Kinh dị" data-i18n="genre_horror">Kinh dị</option>
+                            <option value="Khoa học viễn tưởng" data-i18n="genre_scifi">Khoa học viễn tưởng</option>
+                            <option value="Tình cảm" data-i18n="genre_romance">Tình cảm</option>
+                            <option value="Hài hước" data-i18n="genre_comedy">Hài hước</option>
+                            <option value="Hoạt hình" data-i18n="genre_cartoon">Hoạt hình</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-item">
+                        <select class="form-control" id="filter-nation">
+                            <option value="none" data-i18n="nation_all">Quốc gia</option>
+                            <option value="Âu Mỹ" data-i18n="nation_western">Âu Mỹ</option>
+                            <option value="Trung Quốc" data-i18n="nation_china">Trung Quốc</option>
+                            <option value="Hàn Quốc" data-i18n="nation_korea">Hàn Quốc</option>
+                            <option value="Nhật Bản" data-i18n="nation_japan">Nhật Bản</option>
+                            <option value="Thái Lan" data-i18n="nation_thailand">Thái Lan</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="filter-item">
+                        <select class="form-control" id="filter-year">
+                            <option value="none" data-i18n="year_all">Năm</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="Trước 2023" data-i18n="year_before_2023">Trước 2023</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-danger" id="filterBtn" data-i18n="filter_button">
+                        <i class="fas fa-search"></i> Lọc
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="name_genre">
+        <b>
+            Phim Hành Động
+        </b>
+    </div> -->
+
+    <div class="container" style="max-width: 1220px;">
+        <div class="row">
+            <div class="col-lg-8">
+                <section>
+                    <h2 class="section-title text-white" data-i18n="section_title_cartoon_films"><i
+                            class="fa-solid fa-play text-danger"></i> PHIM HOẠT HÌNH
+                    </h2>
+                    <div class="film-grid">
+                        <div class="film-item" data-title="Kỳ Môn Đội Thuật 2" data-format="Phim lẻ"
+                            data-genre="Hành động" data-nation="Trung Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset/images/phimhanhdong/ky-mon-doi-thuat-2.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_ky_mon_doi_thuat_2">Kỳ
+                                        Môn Đội Thuật
+                                        2</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Khách Sạn Continental" data-format="Phim bộ"
+                            data-genre="Hành động, Hình sự" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset/images/phimhanhdong/khach-san-continental.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">24/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_khach_san_continental">Khách Sạn
+                                        Continental</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tây Trang Bạo Đồ" data-format="Phim lẻ"
+                            data-genre="Hành động" data-nation="Trung Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/tay-trang-bao-do.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_tay_trang_bao_do">Tây
+                                        Trang Bạo
+                                        Đò</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Cửa Hàng Sát Thủ" data-format="Phim lẻ"
+                            data-genre="Hành động, Hài" data-nation="Hàn Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/cua-hang-sat-thu.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_cua_hang_sat_thu">Cửa
+                                        Hàng Sát
+                                        Thủ</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Hoa Nở Về Đêm" data-format="Phim bộ"
+                            data-genre="Tình cảm, Huyền bí" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/hoa-no-ve-dem.jpg" alt="informFIlms.html">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_hoa_no_ve_dem">Hoa Nở
+                                        Về Đêm</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Alienoid 2: Đa Chiều Hỗn" data-format="Phim lẻ"
+                            data-genre="Khoa học viễn tưởng" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/alienoid-2-da-chieu-hon.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_alienoid_2">Alienoid
+                                        2: Đa Chiều
+                                        Hỗn</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Nhân Chứng Sống Cuối" data-format="Phim lẻ"
+                            data-genre="Hành động, Hồi hộp" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nhan-chung-cuoi.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_nhan_chung_cuoi">Nhân
+                                        Chứng Sống
+                                        Cuối</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Người Dẫn Lối Bóng Đêm" data-format="Phim lẻ"
+                            data-genre="Hành động, Kịch tính" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nguoi-dan-loi-bong-dem.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_nguoi_dan_loi_bong_dem">Người Dẫn Lối
+                                        Bóng Đêm</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Chiến Binh (Phần 3)" data-format="Phim bộ"
+                            data-genre="Võ thuật, Hành động" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/mickey-17-87075-1-300x450.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_chien_binh_phan_3">Chiến Binh (Phần
+                                        3)</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Samurai Mắt Xanh" data-format="Phim lẻ"
+                            data-genre="Hành động, Lịch sử" data-nation="Nhật Bản" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/samurai-mat-xanh.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_samurai_mat_xanh">Samurai Mắt
+                                        Xanh</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Mật Vụ Ong" data-format="Phim lẻ"
+                            data-genre="Hành động, Gián điệp" data-nation="Anh" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail" onclick="createRipple(event);window.location.href='';">
+                                    <img src="../asset//images/phimhanhdong/mat-vu-ong.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_mat_vu_ong">Mật Vụ
+                                        Ong</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Trốn Chạy Khỏi Cá Mập" data-format="Phim lẻ"
+                            data-genre="Kinh dị, Sinh tồn" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/chon-chay-khoi-ca-map.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">8/12</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_tron_chay_ca_map">Trốn
+                                        Chạy Khỏi Cá
+                                        Mập</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thanh Tra Sát Nhân" data-format="Phim lẻ"
+                            data-genre="Hình sự, Kịch tính" data-nation="Hàn Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/thanh-tra-sat-nhan.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">20/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_thanh_tra_sat_nhan">Thanh Tra Sát
+                                        Nhân</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thợ Săn Hoang Mạc" data-format="Phim lẻ"
+                            data-genre="Hành động, Phiêu lưu" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/thanh-tra-hoang-mac.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">22/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_tho_san_hoang_mac">Thợ
+                                        Săn Hoang
+                                        Mạc</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Hỏa Phụng Lưu Nguyên" data-format="Phim bộ"
+                            data-genre="Cổ trang, Hành động" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/hoa-phung-lieu-nguyen-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">12/12</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_hoa_phung_luu_nguyen">Hỏa Phụng Lưu
+                                        Nguyên</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tội Ác Kinh Hoàng" data-format="Phim bộ"
+                            data-genre="Hành động" data-nation="Hàn Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/toiackinhhoang.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">4/8</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_toi_ac_kinh_hoang">Tội Ác Kinh
+                                        Hoàng</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tam Quốc" data-format="Phim bộ"
+                            data-genre="Cổ trang, Hành động" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/tamquoc.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">11/11</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_tam_quoc">Tam Quốc</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Trường Sinh Giới" data-format="Phim bộ"
+                            data-genre="Hoạt hình, Cổ trang" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/truong-sinh-gioi-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">77/111</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_truong_sinh_gioi">Trường Sinh Giới</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Mục Thần Ký" data-format="Phim bộ"
+                            data-genre="Hoạt hình, Cổ trang" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/muc-than-ky-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">13/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_muc_than_ky">Mục Thần Ký</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Trò Chơi Vực Sâu" data-format="Phim bộ"
+                            data-genre="Hành động, Kinh dị" data-nation="Trung Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/tro-choi-vuc-sau-thumb.jpg" alt="">
+                                    <div class="quality-badge">F4K</div>
+                                    <div class="episode-count">2/12</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_tro_choi_vuc_sau">Trò Chơi Vực Sâu</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thôn Phệ Tinh Không" data-format="Phim bộ"
+                            data-genre="Kinh dị, Hoạt hình" data-nation="Trung Quốc" data-year="2020">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/thon-phe-tinh-khong-huyet-lac-dai-luc-thumb.jpg"
+                                        alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">23/??</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_thon_phe_tinh_khong">Thôn Phệ Tinh
+                                        Không</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tru Tiên 2021" data-format="Phim bộ"
+                            data-genre="Hoạt hình, Cổ trang" data-nation="Trung Quốc" data-year="2021">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/tru-tien-2021-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_tru_tien_2021">Tru Tiên 2021</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Luật Giang Hồ" data-format="Phim bộ" data-genre="Hành động"
+                            data-nation="Việt Nam" data-year="2025">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/luatgiangho.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">26/32</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_luat_giang_ho">Luật Giang Hồ</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Đấu Phá Thương Khung" data-format="Phim bộ"
+                            data-genre="Hoạt hình" data-nation="Trung Quốc" data-year="2018">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/dau-pha-thuong-khung-ngoai-truyen-thumb.jpg"
+                                        alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">124/??</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_dau_pha_thuong_khung">Đấu Phá Thương
+                                        Khung</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Quyến Tư Lượng" data-format="Phim bộ" data-genre="Hoạt hình"
+                            data-nation="Trung Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/quyen-tu-luong-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_quyen_tu_luong">Quyến Tư Lượng</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Diệp Vấn 2" data-format="Phim lẻ" data-genre="Hành động"
+                            data-nation="Hồng Kông" data-year="2010">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/dietvan2.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_diep_van_2">Diệp Vấn 2</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Đấu La Đại Lục" data-format="Phim bộ"
+                            data-genre="Hoạt hình, Cổ trang" data-nation="Trung Quốc" data-year="2021">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/dau-la-dai-luc-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">12/19</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_dau_la_dai_luc">Đấu La Đại Lục</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Cuộc Gọi Cuối Cùng" data-format="Phim lẻ"
+                            data-genre="Tình cảm, Kinh dị, Hành đông" data-nation="Hàn Quốc" data-year="2022">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/cuocgoicuoicung.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_cuoc_goi_cuoi_cung">Cuộc Gọi Cuối
+                                        Cùng</a></h3>
+                            </div>
+                        </div>
+
+                        <div class="film-item" data-title="Nhân Chứng Sống Cuối" data-format="Phim lẻ"
+                            data-genre="Hành động, Hồi hộp" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nhan-chung-cuoi.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_nhan_chung_cuoi_2">Nhân Chứng Sống
+                                        Cuối</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Người Dẫn Lối Bóng Đêm" data-format="Phim lẻ"
+                            data-genre="Hành động, Kịch tính" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nguoi-dan-loi-bong-dem.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_nguoi_dan_loi_bong_dem_2">Người Dẫn
+                                        Lối Bóng Đêm</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Quái Thú Vô Hình 2" data-format="Phim lẻ"
+                            data-genre="Hành động, Khoa học viễn tưởng" data-nation="Âu Mỹ" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/quai-thu-vo-hinh-2.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_quai_thu_vo_hinh_2">Quái Thú Vô Hình
+                                        2</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Không Dung Thứ" data-format="Phim lẻ"
+                            data-genre="Hành động, Tâm lý" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/khong-dung-thu.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">24/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_khong_dung_thu">Không
+                                        Dung Thứ</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Lãnh Địa Tử Chiến" data-format="Phim lẻ"
+                            data-genre="Hành động, Kịch tính" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/lanh-dia-chien-tu.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_lanh_dia_tu_chien">Lãnh Địa Tử
+                                        Chiến</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="One: Người Hùng Trung Học" data-format="Phim lẻ"
+                            data-genre="Hành động, Chính kịch" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nguoi-hung-trung-hoc.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_one_nguoi_hung_trung_hoc">One: Người
+                                        Hùng Trung Học</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Kiện Tướng" data-format="Phim lẻ"
+                            data-genre="Hành động, Thể thao" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/kien-tuong.jpg" alt="informFIlms.html">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_kien_tuong">Kiện
+                                        Tướng</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tình Báo Tái Xuất" data-format="Phim lẻ"
+                            data-genre="Hành động, Gián điệp" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/tinh-bao-tai-xuat.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_tinh_bao_tai_xuat">Tình Báo Tái
+                                        Xuất</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Cá Mập: Sự Khởi Đầu" data-format="Phim lẻ"
+                            data-genre="Hành động, Kinh dị" data-nation="Hàn Quốc" data-year="2022">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/ca-map-su-khoi-dau.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_ca_map_su_khoi_dau">Cá
+                                        Mập: Sự Khởi
+                                        Đầu</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Cá Mập 2: Cơn Bão" data-format="Phim lẻ"
+                            data-genre="Hành động, Kinh dị" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/ca-map-2-con-bao.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_ca_map_2_con_bao">Cá
+                                        Mập 2: Cơn
+                                        Bão</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thám Tử Phố Tàu 1900" data-format="Phim lẻ"
+                            data-genre="Hành động, Hài hước" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/tham-tu-pho-tau-phan-4.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_tham_tu_pho_tau_1900">Thám Tử Phố Tàu
+                                        1900</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Đặc Vụ Vô Hình Phần 2" data-format="Phim bộ"
+                            data-genre="Hành động, Gián điệp" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/dac-vu-vo-hinh-2.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">24/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_dac_vu_vo_hinh_phan_2">Đặc Vụ Vô Hình
+                                        Phần 2</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Biệt Đội Sấm Sét" data-format="Phim lẻ"
+                            data-genre="Hành động, Siêu anh hùng" data-nation="Âu Mỹ" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/biet-doi-sam-sat.png" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_biet_doi_sam_set">Biệt
+                                        Đội Sấm
+                                        Sét</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Ký Ức Chiến Tranh" data-format="Phim lẻ"
+                            data-genre="Hành động, Chiến tranh" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/ky-uc-chien-tranh.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_ky_uc_chien_tranh">Ký
+                                        Ức Chiến
+                                        Tranh</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Ván Cờ Vây" data-format="Phim lẻ"
+                            data-genre="Hành động, Chính kịch" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/van-co-vay.jpg" alt="informFIlms.html">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_van_co_vay">Ván Cờ
+                                        Vây</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Người Hùng Yếu Đuối" data-format="Phim lẻ"
+                            data-genre="Hành động, Tâm lý" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nguoi-hung-yeu-duoi.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_nguoi_hung_yeu_duoi">Người Hùng Yếu
+                                        Đuối</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Trái Tim Chôn Vùi" data-format="Phim lẻ"
+                            data-genre="Hành động, Lãng mạn" data-nation="Pháp" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/nhan-chung-cuoi.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_trai_tim_chon_vui">Trái Tim Chôn
+                                        Vùi</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Đặc Vụ Lau Kính" data-format="Phim lẻ"
+                            data-genre="Hành động, Hài hước" data-nation="Âu Mỹ" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/dac-vu-lau-kinh.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_dac_vu_lau_kinh">Đặc
+                                        Vụ Lau Kính</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Chiến Binh (Phần 3)" data-format="Phim bộ"
+                            data-genre="Võ thuật, Hành động" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/mickey-17-87075-1-300x450.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_chien_binh_phan_3_2">Chiến Binh (Phần
+                                        3)</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Samurai Mắt Xanh" data-format="Phim lẻ"
+                            data-genre="Hành động, Lịch sử" data-nation="Nhật Bản" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/samurai-mat-xanh.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_samurai_mat_xanh_2">Samurai Mắt
+                                        Xanh</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Mật Vụ Ong" data-format="Phim lẻ"
+                            data-genre="Hành động, Gián điệp" data-nation="Anh" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail" onclick="createRipple(event);window.location.href='';">
+                                    <img src="../asset//images/phimhanhdong/mat-vu-ong.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_mat_vu_ong_2">Mật Vụ
+                                        Ong</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Trốn Chạy Khỏi Cá Mập" data-format="Phim lẻ"
+                            data-genre="Kinh dị, Sinh tồn" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/chon-chay-khoi-ca-map.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">8/12</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_tron_chay_ca_map_2">Trốn Chạy Khỏi Cá
+                                        Mập</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thanh Tra Sát Nhân" data-format="Phim lẻ"
+                            data-genre="Hình sự, Kịch tính" data-nation="Hàn Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/thanh-tra-sat-nhan.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">20/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_thanh_tra_sat_nhan_2">Thanh Tra Sát
+                                        Nhân</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Thợ Săn Hoang Mạc" data-format="Phim lẻ"
+                            data-genre="Hành động, Phiêu lưu" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/thanh-tra-hoang-mac.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">22/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_tho_san_hoang_mac_2">Thợ Săn Hoang
+                                        Mạc</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Hỏa Phụng Lưu Nguyên" data-format="Phim bộ"
+                            data-genre="Cổ trang, Hành động" data-nation="Trung Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimmoi/hoa-phung-lieu-nguyen-thumb.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">12/12</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="" data-i18n="film_hoa_phung_luu_nguyen_2">Hỏa Phụng Lưu
+                                        Nguyên</a></h3>
+                            </div>
+                        </div>
+
+                        <div class="film-item" data-title="Khách Sạn Continental" data-format="Phim bộ"
+                            data-genre="Hành động, Hình sự" data-nation="Âu Mỹ" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/khach-san-continental.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <!-- <div class="episode-count">24/24</div> -->
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_khach_san_continental_2">Khách Sạn
+                                        Continental</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Tây Trang Bạo Đồ" data-format="Phim lẻ"
+                            data-genre="Hành động" data-nation="Trung Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/tay-trang-bao-do.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_tay_trang_bao_do_2">Tây Trang Bạo
+                                        Đò</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Cửa Hàng Sát Thủ" data-format="Phim lẻ"
+                            data-genre="Hành động, Hài" data-nation="Hàn Quốc" data-year="2023">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/cua-hang-sat-thu.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html"
+                                        data-i18n="film_cua_hang_sat_thu_2">Cửa Hàng Sát
+                                        Thủ</a></h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Hoa Nở Về Đêm" data-format="Phim bộ"
+                            data-genre="Tình cảm, Huyền bí" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/hoa-no-ve-dem.jpg" alt="informFIlms.html">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count">24/24</div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_hoa_no_ve_dem_2">Hoa
+                                        Nở Về Đêm</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="film-item" data-title="Alienoid 2: Đa Chiều Hỗn" data-format="Phim lẻ"
+                            data-genre="Khoa học viễn tưởng" data-nation="Hàn Quốc" data-year="2024">
+                            <div class="film-poster">
+                                <div class="movie-thumbnail"
+                                    onclick="createRipple(event);window.location.href='informFIlms.html';">
+                                    <img src="../asset//images/phimhanhdong/alienoid-2-da-chieu-hon.jpg" alt="">
+                                    <div class="quality-badge">4K</div>
+                                    <div class="episode-count"></div>
+                                    <div class="overlay-item">
+                                        <div class="play-circle">
+                                            <div class="play-icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film-info">
+                                <h3><a class="film-title" href="informFIlms.html" data-i18n="film_alienoid_2_2">Alienoid
+                                        2: Đa Chiều
+                                        Hỗn</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Pagination -->
+                <div id="page-number">
+                    <ul class="pagination" id="pagination">
+                        <!-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="phimhanhdong-page-2.html">2</a></li>
+                        <li class="page-item"><a class="page-link" href="phimhanhdong-page-3.html">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="phimhanhdong-page-2.html" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <!-- Sidebar -->
+                <aside class="sidebar pt-3 pt-lg-0">
+                    <!-- noibat -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title text-white" data-i18n="featured_films"><i
+                                class="fa-solid fa-fire text-danger"></i> NỔI BẬT</h3>
+                        <div class="movies-grid ">
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/chiec-vong-ngoc-bich-17170-thumb.webp"
+                                    alt="Chiếc Vòng Ngọc Bích" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_chiec_vong_ngoc_bich">Chiếc Vòng Ngọc Bích
+                                    </h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/chuyen-tinh-cuu-long-16800-thumb.webp"
+                                    alt="Chuyện Tình Cửu Long" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_2">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_chuyen_tinh_cuu_long">Chuyện Tình Cửu Long
+                                    </h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/cung-dien-ma-am-16665-thumb.webp"
+                                    alt="Cung Điện Ma Ám" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_3">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_cung_dien_ma_am">Cung Điện Ma Ám</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/do-danh-vo-yeu-17167-thumb.webp" alt="Dỗ Dành Vợ Yêu"
+                                    class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_4">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_do_danh_vo_yeu">Dỗ Dành Vợ Yêu</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/ga-nham-the-tu-phi-17750-thumb.webp"
+                                    alt="Gả Nhầm Thê Tử Phi" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_5">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_ga_nham_the_tu_phi">Gả Nhầm Thê Tử Phi</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/ma-oi-kien-ai-than-chu-ma-cua-toi-.webp"
+                                    alt="Má Ơi Kiến Ai Thần Chú Ma" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_6">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_ma_oi_kien_ai_than_chu_ma">Má Ơi Kiến Ai
+                                        Thần Chú Ma</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/mot-seoul-chua-biet-den-17474-thumb.webp"
+                                    alt="Một Seoul Chưa Biết Đến" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_7">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_mot_seoul_chua_biet_den">Một Seoul Chưa
+                                        Biết Đến</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/nghich-thien-thanh-tien-17810-thumb.webp"
+                                    alt="Nghịch Thiên Thành Tiên" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_8">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_nghich_thien_thanh_tien">Nghịch Thiên Thành
+                                        Tiên</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card">
+                                <img src="../asset//images/noibat/nguoi-thua-ke-tam-duc-17807-thumb.webp"
+                                    alt="Người Thua Kế Tam Duc" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_9">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_nguoi_thua_ke_tam_duc">Người Thua Kế Tam
+                                        Duc</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle-noibat">
+                                        <div class="play-icon-noibat"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sapchieu -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title text-white" data-i18n="upcoming_films"><i
+                                class="fa-solid fa-film text-danger"></i> SẮP CHIẾU</h3>
+                        <div class="movies-grid-coming ">
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/phong-anh-nhien-mai-huong-16942-thumb.webp"
+                                    alt="Phong Ảnh Nhiên Mai Hương" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_10">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_phong_anh_nhien_mai_huong">Phong Ảnh Nhiên
+                                        Mai Hương</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/ho-yeu-tieu-hong-nuong-vuong-quyen-thien.webp"
+                                    alt="Hồ Yêu Tiểu Hồng Nương" class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_11">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_ho_yeu_tieu_hong_nuong">Hồ Yêu Tiểu Hồng
+                                        Nương</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/Pho-Son-Hai.png" alt="Phó Sơn Hải"
+                                    class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_12">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_pho_son_hai">Phó Sơn Hải</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/maintimxac.png" alt="Tìm Xác: Ma Không Đầu"
+                                    class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_13">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_tim_xac_ma_khong_dau">Tìm Xác: Ma Không Đầu
+                                    </h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/dia-dao.webp" alt="Địa Đạo: Mặt Trời Trong Bóng Tối"
+                                    class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_14">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_dia_dao_mat_troi_trong_bong_toi">Địa Đạo:
+                                        Mặt Trời Trong Bóng Tối</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="movie-card-coming">
+                                <img src="../asset//images/sapchieu/quy-nhap-trang.jpg" alt="Quỷ Nhập Tràng"
+                                    class="movie-poster">
+                                <div class="vietsub-badge" data-i18n="vietsub_badge_15">Vietsub</div>
+                                <div class="movie-overlay">
+                                    <h3 class="movie-title" data-i18n="movie_quy_nhap_trang">Quỷ Nhập Tràng</h3>
+                                </div>
+                                <div class="overlay-item">
+                                    <div class="play-circle">
+                                        <div class="play-icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Top film -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title text-white" data-i18n="top_films"><i
+                                class="fas fa-trophy text-danger"></i> TOP PHIM HAY</h3>
+                        <div class="top-film-list">
+                            <div class="top-film-item">
+                                <div class="rank-number">1</div>
+                                <div class="top-film-poster">
+                                    <div class="movie-thumbnail"
+                                        onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                        <img src="../asset//images/phimmoi/kiem-lai-thumb.jpg" alt="">
+
+                                        <div class="overlay-item">
+                                            <div class="play-circle-top-film">
+                                                <div class="play-icon-top-film"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-film-info">
+                                    <div><a class="top-film-title" href="" data-i18n="top_film_kiem_lai">Kiếm Lai</a>
+                                    </div>
+                                    <div class="top-film-meta" data-i18n="top_film_kiem_lai_meta">Tập 10 • 9.2⭐</div>
+                                </div>
+                            </div>
+
+                            <div class="top-film-item">
+                                <div class="rank-number">2</div>
+                                <div class="top-film-poster">
+                                    <div class="movie-thumbnail"
+                                        onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                        <img src="../asset//images/phimmoi/baothu.png" alt="">
+
+                                        <div class="overlay-item">
+                                            <div class="play-circle-top-film">
+                                                <div class="play-icon-top-film"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-film-info">
+                                    <div><a class="top-film-title" href="" data-i18n="top_film_bao_thu">Báo Thù</a>
+                                    </div>
+                                    <div class="top-film-meta" data-i18n="top_film_bao_thu_meta">Hoàn thành • 9.1⭐</div>
+                                </div>
+                            </div>
+
+                            <div class="top-film-item">
+                                <div class="rank-number">3</div>
+                                <div class="top-film-poster">
+                                    <div class="movie-thumbnail"
+                                        onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                        <img src="../asset//images/phimmoi/cuocgoicuoicung.png" alt="">
+
+                                        <div class="overlay-item">
+                                            <div class="play-circle-top-film">
+                                                <div class="play-icon-top-film"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-film-info">
+                                    <div><a class="top-film-title" href="" data-i18n="top_film_cuoc_goi_cuoi_cung">Cuộc
+                                            Gọi Cuối Cùng</a></div>
+                                    <div class="top-film-meta" data-i18n="top_film_cuoc_goi_cuoi_cung_meta">Hoàn thành •
+                                        9.0⭐</div>
+                                </div>
+                            </div>
+
+                            <div class="top-film-item">
+                                <div class="rank-number">4</div>
+                                <div class="top-film-poster">
+                                    <div class="movie-thumbnail"
+                                        onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                        <img src="../asset//images/phimmoi/thon-phe-tinh-khong-huyet-lac-dai-luc-thumb.jpg"
+                                            alt="">
+
+                                        <div class="overlay-item">
+                                            <div class="play-circle-top-film">
+                                                <div class="play-icon-top-film"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-film-info">
+                                    <div><a class="top-film-title" href="" data-i18n="top_film_thon_phe_tinh_khong">Thôn
+                                            Phệ Tinh Không</a></div>
+                                    <div class="top-film-meta" data-i18n="top_film_thon_phe_tinh_khong_meta">Tập 8 •
+                                        8.9⭐</div>
+                                </div>
+                            </div>
+
+                            <div class="top-film-item">
+                                <div class="rank-number">5</div>
+                                <div class="top-film-poster">
+                                    <div class="movie-thumbnail"
+                                        onclick="createRipple(event); window.location.href='informFIlms.html';">
+                                        <img src="../asset//images/phimmoi/truong-sinh-gioi-thumb.jpg" alt="">
+
+                                        <div class="overlay-item">
+                                            <div class="play-circle-top-film">
+                                                <div class="play-icon-top-film"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-film-info">
+                                    <div><a class="top-film-title" href="" data-i18n="top_film_truong_sinh_gioi">Trường
+                                            Sinh Giới</a></div>
+                                    <div class="top-film-meta" data-i18n="top_film_truong_sinh_gioi_meta">Tập 15 • 8.7⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title text-white" data-i18n="schedule_title"><i
+                                class="fas fa-calendar-alt text-danger"></i> LỊCH CHIẾU
+                        </h3>
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <span data-i18n="schedule_kiem_lai_title">Kiếm Lai</span>
+                                <span class="schedule-time" data-i18n="schedule_kiem_lai_time">CN 9:30</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span data-i18n="schedule_hoa_no_ve_dem_title">Hoa Nở Về Đêm</span>
+                                <span class="schedule-time" data-i18n="schedule_hoa_no_ve_dem_time">T2 23:00</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span data-i18n="schedule_samurai_mat_xanh_title">Samurai Mắt Xanh</span>
+                                <span class="schedule-time" data-i18n="schedule_samurai_mat_xanh_time">T3 22:00</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span data-i18n="schedule_mat_vu_mat_ong_title">Mật Vụ Mật Ong</span>
+                                <span class="schedule-time" data-i18n="schedule_mat_vu_mat_ong_time">T4 17:30</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span data-i18n="schedule_tho_san_hoang_mac_title">Thợ Săn Hoang Mặc</span>
+                                <span class="schedule-time" data-i18n="schedule_tho_san_hoang_mac_time">T6 23:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Genres
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title"><i class="fas fa-tags"></i> THỂ LOẠI</h3>
+                        <div class="genres-grid">
+                            <div class="genre-item">Hành động</div>
+                            <div class="genre-item">Phiêu lưu</div>
+                            <div class="genre-item">Hài hước</div>
+                            <div class="genre-item">Drama</div>
+                            <div class="genre-item">Romance</div>
+                            <div class="genre-item">Fantasy</div>
+                            <div class="genre-item">Sci-Fi</div>
+                            <div class="genre-item">Horror</div>
+                            <div class="genre-item">Slice of Life</div>
+                            <div class="genre-item">Sports</div>
+                            <div class="genre-item">Mecha</div>
+                            <div class="genre-item">Supernatural</div>
+                        </div>
+                    </div> -->
+                </aside>
+            </div>
+        </div>
+
+
+    </div>
+    <button type="button" class="toTop" style="
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #ff0000;
+        width: 50px;
+        height: 50px;
+      ">
+        <i style="color: white; font-size: 20px" class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- Footer -->
+    <footer class="text-light pt-4" style="background-color: black;" !important>
+        <div class="container" style="max-width: 1220px;position: relative; background-color: black;">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 style="font-family: 'jsMath-cmti10', sans-serif; color: red">
+                        BestFilms
+                    </h5>
+                    <p data-i18n="quality_slogan">Chất lượng sắc nét</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="explore">
+                        Khám phá
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="new_films2">Phim mới</a></li>
+                        <li><a href="#" data-i18n="series_films">Phim bộ</a></li>
+                        <li><a href="#" data-i18n="single_films">Phim lẻ</a></li>
+                        <li><a href="#" data-i18n="cinema_films2">Phim chiếu rạp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="genre2">
+                        Thể loại
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="action">Hành động</a></li>
+                        <li><a href="#" data-i18n="horror">Kinh dị</a></li>
+                        <li><a href="#" data-i18n="romance">Tình cảm</a></li>
+                        <li><a href="#" data-i18n="fantasy">Lãng mạn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="help">
+                        Trợ giúp
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="account">Tài khoản</a></li>
+                        <li><a href="#" data-i18n="faq">Hỏi đáp</a></li>
+                        <li><a href="#" data-i18n="contact">Liên hệ</a></li>
+                        <li><a href="#" data-i18n="news">Tin tức</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="policy">
+                        Chính sách
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" data-i18n="terms_of_use">Điều khoản sử dụng</a>
+                        </li>
+                        <li>
+                            <a href="#" data-i18n="privacy_policy">Chính sách bảo mật</a>
+                        </li>
+                        <li>
+                            <a href="#" data-i18n="frequently_asked_questions">Câu hỏi thường gặp</a>
+                        </li>
+                        <li><a href="#" data-i18n="contact_ads">Liên hệ quảng cáo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #5c5c5c; height: 10px" />
+            <div class="row">
+                <div class="col-12 text-center">
+
+                    <div style="gap: 10px; display: flex; justify-content: center; font-size: larger;">
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p data-i18n="all_rights_reserved" style="margin-bottom: 50px;">
+                        &copy; Copyright 2025 BestFilms. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        // play
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+
+            ripple.className = 'ripple';
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            button.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // Add floating animation
+        const container = document.querySelector('.movie-container');
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+            container.style.transform = `perspective(1000px) rotateY(${mouseX * 5}deg) rotateX(${-mouseY * 5}deg) scale(${1 + Math.abs(mouseX) * 0.05})`;
+        });
+        // Back to top
+
+
+        // Lấy nút back to top
+        const backToTopBtn = document.getElementById('backToTop');
+
+        // Hiển thị/ẩn nút dựa trên vị trí cuộn
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Xử lý click để cuộn về đầu trang
+        backToTopBtn.addEventListener('click', () => {
+            // Thêm hiệu ứng ripple
+            backToTopBtn.classList.add('clicked');
+
+            // Cuộn mượt mà về đầu trang
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Xóa hiệu ứng ripple sau 300ms
+            setTimeout(() => {
+                backToTopBtn.classList.remove('clicked');
+            }, 300);
+        });
+
+        // Cải thiện hiệu ứng hover
+        backToTopBtn.addEventListener('mouseenter', () => {
+            backToTopBtn.style.transform = 'translateY(-5px) scale(1.1)';
+        });
+
+        backToTopBtn.addEventListener('mouseleave', () => {
+            if (backToTopBtn.classList.contains('show')) {
+                backToTopBtn.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+
+        var itemsPerPage = 28;
+        var paginatedItems = []; // lưu lại danh sách cần phân trang sau lọc / tìm kiếm
+
+        // Hàm hiển thị các mục theo trang
+        function showPage($items, page) {
+            $('.film-item').hide(); // ẩn tất cả trước
+            var start = (page - 1) * itemsPerPage;
+            var end = start + itemsPerPage;
+            $items.slice(start, end).show();
+        }
+
+
+        // Hàm tạo phân trang dựa trên danh sách item hiện tại
+        function paginate() {
+            paginatedItems = $('.film-item').filter(':visible').toArray(); // lưu lại
+
+            var totalItems = paginatedItems.length;
+            var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+            $('#pagination').empty();
+
+            if (totalPages <= 1) return;
+
+            for (var i = 1; i <= totalPages; i++) {
+                $('#pagination').append('<li class="page-item"><a class="page-link" data-page="' + i + '" href="#">' + i + '</a></li>');
+            }
+
+            showPage($(paginatedItems), 1);
+            $('#pagination li:first').addClass('active');
+        }
+
+
+        // Sự kiện click phân trang
+        $('#pagination').on('click', '.page-link', function (e) {
+            e.preventDefault();
+            var page = $(this).data('page');
+
+            showPage($(paginatedItems), page);
+
+            $('#pagination .page-item').removeClass('active');
+            $(this).parent().addClass('active');
+        });
+
+
+        // Gọi phân trang lần đầu
+        paginate();
+
+
+        // filter
+        // Ghi nhớ thứ tự ban đầu khi DOM sẵn sàng
+        var originalOrder = [];
+        $(document).ready(function () {
+            $('.film-item').each(function () {
+                originalOrder.push(this); // Lưu tham chiếu đến phần tử gốc
+            });
+        });
+
+
+
+
+        $('#filterBtn').on('click', function () {
+            var selectedFormat = $('#filter-format').val();
+            var selectedGenre = $('#filter-genre').val();
+            var selectedNation = $('#filter-nation').val();
+            var selectedYear = $('#filter-year').val();
+            if (selectedFormat === 'none' && selectedGenre === 'none' && selectedNation === 'none' && selectedYear === 'none') {
+                $('.film-item').show();
+            } else {
+                $('.film-item').each(function () {
+                    var format = $(this).data('format');
+                    var genre = $(this).data('genre'); // chuỗi
+                    var nation = $(this).data('nation');
+                    var year = $(this).data('year').toString(); // convert số thành chuỗi để so sánh
+                    // So sánh từng điều kiện
+                    var matchFormat = (selectedFormat === 'none' || format === selectedFormat);
+                    var matchGenre = (selectedGenre === 'none' || genre.includes(selectedGenre));
+                    var matchNation = (selectedNation === 'none' || nation === selectedNation);
+                    var matchYear = (selectedYear === 'none' || (selectedYear === 'Trước 2023' && parseInt($(this).data('year')) < 2023) || parseInt(year) === parseInt(selectedYear));
+                    // Nếu thỏa tất cả điều kiện thì hiện, ngược lại thì ẩn
+                    if (matchGenre && matchNation && matchYear && matchFormat) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+
+            }
+
+            // if (selectedFormat !== 'none' || selectedGenre !== 'none' || selectedNation !== 'none' || selectedYear !== 'none') {
+            //     $('#page-number').hide();
+            // } else {
+            //     $('#page-number').show();
+            // }
+            //sort
+            var sort = $('#filter-sort').val();
+            var $container = $('.film-grid');
+            var $visibleItems = $('.film-item:visible').toArray();
+
+            if (sort !== 'none') {
+
+                $visibleItems.sort(function (a, b) {
+                    var aTitle = $(a).data('title').toLowerCase();
+                    var bTitle = $(b).data('title').toLowerCase();
+                    var aYear = parseInt($(a).data('year'));
+                    var bYear = parseInt($(b).data('year'));
+
+                    if (sort === 'name-asc') {
+                        return aTitle.localeCompare(bTitle);
+                    } else if (sort === 'name-desc') {
+                        return bTitle.localeCompare(aTitle);
+                    } else if (sort === 'year-asc') {
+                        return aYear - bYear;
+                    } else if (sort === 'year-desc') {
+                        return bYear - aYear;
+                    }
+                });
+            }
+            else {
+                // Nếu sort = none thì khôi phục lại thứ tự ban đầu
+                $visibleItems = originalOrder.filter(function (item) {
+                    return $(item).is(':visible');
+                });
+            }
+            // Gắn lại các item theo thứ tự mới
+            $.each($visibleItems, function (index, item) {
+                $container.append(item);
+            });
+
+            paginate();
+
+        });
+    </script>
+    <!-- search  -->
+    <script>
+        $('#search-input').on('input', function () {
+            var keyword = $('#search-input').val().toLowerCase().trim();
+            // var matchSearch = (keyword === '' || title.includes(keyword));
+            $('.film-item').each(function () {
+                var title = $(this).data('title').toLowerCase();
+
+                if (title.includes(keyword)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            // LỌC hoặc TÌM KIẾM xong thì gọi lại paginate()
+            paginate();
+
+        })
+    </script>
+
+
+</body>
+
+</html>

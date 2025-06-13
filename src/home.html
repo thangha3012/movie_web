@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="bestfilms_title">BestFilms</title>
+  <link rel="icon" type="image/x-icon" href="../img/logo1-removebg-preview.png" style="width: 20px; height: 20px" />
+
+  <link rel="stylesheet" href="../asset/Bootstrap/css/bootstrap.min.css" />
+  <script src="../asset/Bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../asset/fonts/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_drop_down" />
+  <script src="../asset/JQuery/jquery.js"></script>
+  <link rel="stylesheet" href="../src/style/home.css" />
+
+  <link href="https://fonts.cdnfonts.com/css/jsmath-cmti10" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bowlby+One+SC&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bowlby+One+SC&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Gloock&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bowlby+One+SC&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Creepster&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IM+Fell+English+SC&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <script>
+    $('#search-input').on('input', function () {
+      var keyword = $('#search-input').val().toLowerCase().trim();
+      // var matchSearch = (keyword === '' || title.includes(keyword));
+      $('.film-item').each(function () {
+        var title = $(this).data('title').toLowerCase();
+
+        if (title.includes(keyword)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+
+      // LỌC hoặc TÌM KIẾM xong thì gọi lại paginate()
+      paginate();
+
+    })
+  </script>
+  <script src="../src/controller/main.js"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-light p-0" style="position: fixed;background-color: black;">
+    <div class="container" style="height: 60px; max-width: 1220px; background-color: black;">
+      <a class="navbar-brand" href="home.html">
+        <img style="height: 60px; width: 60px" class="logo" src="../img/logo1-removebg-preview.png" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
+        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarID">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="home.html" data-i18n="home">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="phimmoi.html" data-i18n="new_films">Phim Mới</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="thinhhanh.html" data-i18n="trending">Thịnh Hành</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown" data-i18n="genre">Thể
+              Loại</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <div class="row">
+                <div class="col-sm-4">
+                  <a data-i18n="newCartoon" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hoạt Hình</a>
+                  <a data-i18n="newRomance" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Tình
+                    Cảm</a>
+                  <a data-i18n="newHistorical" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Cổ trang</a>
+                </div>
+                <div class="col-sm-4">
+                  <a data-i18n="newFantasy" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Viễn tưởng</a>
+                  <a data-i18n="newWar" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Chiến Tranh</a>
+                  <a data-i18n="newAction" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Hành động</a>
+                </div>
+                <div class="col-sm-4">
+                  <a data-i18n="newAdventure" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Phiêu Lưu</a>
+                  <a data-i18n="newMartialArts" class="dropdown-item" href="phimAuMy.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Võ Thuật</a>
+                  <a data-i18n="newHorror" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Kinh dị</a>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown" data-i18n="country">Quốc
+              Gia</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <div class="row">
+                <div class="col-sm-4">
+                  <a data-i18n="newWestern" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Âu Mỹ</a>
+                  <a data-i18n="newChinese" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Trung Quốc</a>
+                  <a data-i18n="newKorean" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Hàn Quốc</a>
+                </div>
+                <div class="col-sm-4">
+                  <a data-i18n="newThai" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Thái Lan</a>
+                  <a data-i18n="newVietnamese" class="dropdown-item" href="phimAuMy.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Việt Nam</a>
+                  <a data-i18n="newJapanese" class="dropdown-item" href="phimHoatHinh.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Nhật Bản</a>
+                </div>
+                <div class="col-sm-4">
+                  <a data-i18n="newIndonesian" class="dropdown-item" href="phimAuMy.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Indonesia</a>
+                  <a data-i18n="newCambodian" class="dropdown-item" href="phimAuMy.html"><i
+                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Campuchia</a>
+                  <a data-i18n="newLaotian" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
+                      style="color: #ffffff;"></i> Lào</a>
+                </div>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+      <form class="d-flex align-items-center ms-3">
+        <div class="search-box">
+          <input id="search-input" type="text" placeholder="Tìm kiếm" data-i18n-placeholder="search_placeholder" />
+          <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="position-relative">
+          <a class="ms-3 text-light" id="languageToggle" style="display: inline-block; cursor: pointer"><i
+              class="fa-solid fa-globe" style="font-size: 23px"></i></a>
+
+          <div id="languageDropdown" style="
+                display: none;
+                position: absolute;
+                top: 42px;
+                background-color: rgba(0, 0, 0, 0.7);
+              ">
+            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="vi"
+                data-i18n="vietnamese">Tiếng Việt</a></span>
+            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="en"
+                data-i18n="english">English</a></span>
+            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="zh"
+                data-i18n="chinese_simplified">简体中文</a></span>
+          </div>
+        </div>
+
+        <a href="#" class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#authModal">
+          <i class="fa-solid fa-user large-icon" style="font-size: 23px"></i>
+        </a>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Modal Đăng Nhập -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel" data-i18n="welcome_message">
+            Chào mừng bạn!
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" class="auth-form">
+            <h2 class="text-center mb-4" data-i18n="login">Đăng nhập</h2>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+              <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                <span data-i18n="account">Tài khoản</span></label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+              <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                <span data-i18n="password">Password</span></label>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <input type="checkbox" id="rememberMe" />
+                <label for="rememberMe" data-i18n="remember_me">Ghi nhớ</label>
+              </div>
+              <a href="#" data-i18n="forgot_password">Quên mật khẩu?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" data-i18n="login">
+              Đăng nhập
+            </button>
+            <p class="text-center mt-3" data-i18n="or_login_with">
+              Hoặc đăng nhập bằng
+            </p>
+            <div class="d-flex justify-content-center gap-2">
+              <button type="button" class="btn btn-outline-primary">
+                <i class="fa-brands fa-facebook"></i> Facebook
+              </button>
+              <button type="button" class="btn btn-outline-danger">
+                <i class="fa-brands fa-google"></i> Google
+              </button>
+            </div>
+            <p class="text-center mt-3">
+              <span data-i18n="no_account_yet">Chưa có tài khoản?</span>
+              <a href="#" id="showRegisterForm" data-i18n="register">Đăng ký</a>
+            </p>
+          </form>
+
+          <form id="registerForm" class="auth-form d-none">
+            <h2 class="text-center mb-4" data-i18n="register">Đăng ký</h2>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+              <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                <span data-i18n="account">Tài khoản</span></label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+              <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                <span data-i18n="password">Password</span></label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Password" />
+              <label for="confirmPassword"><i class="fa-solid fa-lock"></i>
+                <span data-i18n="confirm_password">Xác nhận Mật khẩu</span></label>
+            </div>
+            <button type="submit" class="btn btn-secondary w-100" data-i18n="register">
+              Đăng ký
+            </button>
+            <p class="text-center mt-3" data-i18n="or_register_with">
+              Hoặc đăng ký bằng
+            </p>
+            <div class="d-flex justify-content-center gap-2">
+              <button type="button" class="btn btn-outline-primary">
+                <i class="fa-brands fa-facebook"></i> Facebook
+              </button>
+              <button type="button" class="btn btn-outline-danger">
+                <i class="fa-brands fa-google"></i> Google
+              </button>
+            </div>
+            <p class="text-center mt-3">
+              <span data-i18n="already_have_account">Đã có tài khoản?</span>
+              <a href="#" id="showLoginForm" data-i18n="login">Đăng nhập</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div id="slideshow" class="container-fluid p-0 position-relative">
+    <div class="list-img">
+      <div class="bg-dark text-white position-relative" style="
+            /* background: url() no-repeat center/cover; */
+            height: 866px;
+            max-width: 1440px;
+            margin: 0 auto;
+          ">
+        <img
+          src="https://images.weserv.nl/?url=cdnphoto.dantri.com.vn/xDlSXxhxK6vH9_INcIMoIazGERU=/thumb_w/1020/2023/12/14/z4974964715149fbc2d4339fc0ce5900ffe0f5a811ad53-1702563603587.jpg"
+          alt="" />
+        <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 50%;
+              background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.9) 20%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 1;
+            "></div>
+        <div style="
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 200px;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.9) 60%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 2;
+            "></div>
+        <div id="caption" class="position-absolute" style="z-index: 3; top: 100px; left: 120px">
+          <h1 data-i18n="movie_title-vn" class="mb-0" style="
+                font-family: 'Kolker Brush', cursive;
+                font-weight: 500;
+                font-style: normal;
+                color: #ff3b30;
+                font-size: 150px;
+              ">
+            Kẻ ăn hồn
+          </h1>
+          <p data-i18n="free-vn" class="lead" style="
+                background-color: #ff0000;
+                color: white;
+                width: 100px;
+                text-align: center;
+                border-radius: 3px;
+                font-size: 20px;
+              ">
+            Miễn phí
+          </p>
+          <div class="mb-2">
+            <span style="color: #ff0000; margin-right: 10px">★★★★★</span>
+            <span style="
+                  background-color: rgba(217, 217, 217, 0.3);
+                  border-radius: 3px;
+                  margin-right: 10px;
+                  padding: 0 2px;
+                ">18+</span>
+            <span data-i18n="duration-vn">2h30p</span><br />
+          </div>
+          <span data-i18n="country-vn" style="
+                padding: 2px 15px;
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                margin-right: 10px;
+              ">Việt Nam</span>
+          <span data-i18n="genre-vn" style="
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                padding: 2px 15px;
+              ">Kinh dị</span>
+          <br /><br />
+          <p data-i18n="description-vn" style="width: 600px">
+            Mỗi dịp rằm tháng Bảy, làng quê yên bình bỗng chìm trong nỗi sợ
+            hãi với lễ rước đèn âm hồn. Những chiếc mặt nạ trắng, ngọn đèn ma
+            quái... và một lời nguyền chưa từng được hóa giải.
+          </p>
+          <p>
+            <span data-i18n="cast-vn" style="color: red; font-weight: bold">Diễn viên:
+            </span>
+            <span data-i18n="cast-details-vn">Hoàng Hà, Lan Phương,...</span>
+          </p>
+          <span class="d-flex"><a class="play" href="informFIlms.html" style="text-decoration: none; color: white"
+              href="">▶</a>
+            <a class="playlist" href=""><i style="text-decoration: none; color: rgb(62, 59, 59)"
+                class="fa-solid fa-book"></i></a></span>
+        </div>
+      </div>
+      <div class="bg-dark text-white position-relative" style="
+            background: url('') no-repeat center/cover;
+            height: 866px;
+            max-width: 1440px;
+            margin: 0 auto;
+          ">
+        <img src="https://6.soompi.io/wp-content/uploads/image/6325e3ecc5e3463abdf019683667aaef.jpeg?s=900x600&e=t"
+          alt="" />
+        <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 50%;
+              background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.9) 20%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 1;
+            "></div>
+        <div style="
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 200px;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.9) 60%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 2;
+            "></div>
+        <div id="caption" class="position-absolute" style="z-index: 3; top: 100px; left: 120px">
+          <h1 data-i18n="movie_title-kr" class="mb-0" style="
+                font-family: 'Creepster', system-ui;
+                font-optical-sizing: auto;
+                font-style: normal;
+                color: #8b0000;
+                font-size: 150px;
+              ">
+            Kingdom 2
+          </h1>
+          <p data-i18n="free-kr" class="lead" style="
+                background-color: #ff0000;
+                color: white;
+                width: 100px;
+                text-align: center;
+                border-radius: 3px;
+                font-size: 20px;
+              ">
+            Miễn phí
+          </p>
+          <div class="mb-2">
+            <span style="color: #ff0000; margin-right: 10px">★★★★★</span>
+            <span style="
+                  background-color: rgba(217, 217, 217, 0.3);
+                  border-radius: 3px;
+                  margin-right: 10px;
+                  padding: 0 2px;
+                ">18+</span>
+            <span data-i18n="duration-kr">56p/Tập</span><br />
+          </div>
+          <span data-i18n="country-kr" style="
+                padding: 2px 15px;
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                margin-right: 10px;
+              ">Hàn Quốc
+          </span>
+          <span data-i18n="genre-kr" style="
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                padding: 2px 15px;
+              ">Kinh dị
+          </span>
+          <br /><br />
+          <p data-i18n="description-kr" style="width: 600px">
+            Khi bóng tối không chỉ đến từ lũ xác sống khát máu, mà còn từ lòng
+            tham của con người. Trong triều đại Joseon hỗn loạn, Thái tử Lee
+            Chang bước vào cuộc chiến sinh tồn giữa chính trị đen tối và đại
+            dịch thây ma.
+          </p>
+          <p>
+            <span data-i18n="cast-kr" style="color: red; font-weight: bold">Diễn viên:
+            </span>
+            <span data-i18n="cast-details-kr">Ju Ji-hoon, Bae Doona, Ryu Seung-ryong,...</span>
+          </p>
+          <span class="d-flex"><a class="play" href="informFIlms.html" style="text-decoration: none; color: white"
+              href="">▶</a>
+            <a class="playlist" href=""><i style="text-decoration: none; color: rgb(62, 59, 59)"
+                class="fa-solid fa-book"></i></a></span>
+        </div>
+      </div>
+      <div class="bg-dark text-white position-relative" style="
+            background: url() no-repeat center/cover;
+            height: 866px;
+            max-width: 1440px;
+            margin: 0 auto;
+          ">
+        <img src="https://images2.thanhnien.vn/528068263637045248/2025/2/5/ne-zha-2-1738729169954967486487.png"
+          alt="" />
+        <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 50%;
+              background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.9) 20%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 1;
+            "></div>
+        <div style="
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 200px;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.9) 60%,
+                rgba(0, 0, 0, 0)
+              );
+              z-index: 2;
+            "></div>
+        <div id="caption" class="position-absolute" style="z-index: 3; top: 100px; left: 120px">
+          <h1 data-i18n="movie_title-zh" class="mb-0" style="
+                font-family: 'Black Han Sans', sans-serif;
+                font-weight: 200;
+                font-style: normal;
+                color: red;
+                font-size: 150px;
+              ">
+            Na tra 2
+          </h1>
+          <p data-i18n="free-zh" class="lead" style="
+                background-color: #ff0000;
+                color: white;
+                width: 100px;
+                text-align: center;
+                border-radius: 3px;
+                font-size: 20px;
+              ">
+            Miễn phí
+          </p>
+          <div class="mb-2">
+            <span style="color: #ff0000; margin-right: 10px">★★★★★</span>
+            <span style="
+                  background-color: rgba(217, 217, 217, 0.3);
+                  border-radius: 3px;
+                  margin-right: 10px;
+                  padding: 0 2px;
+                ">18+</span>
+            <span data-i18n="duration-zh">2h24p</span><br />
+          </div>
+          <span data-i18n="country-zh" style="
+                padding: 2px 15px;
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                margin-right: 10px;
+              ">Trung Quốc
+          </span>
+          <span data-i18n="genre-zh" style="
+                background-color: rgba(217, 217, 217, 0.3);
+                border-radius: 3px;
+                padding: 2px 15px;
+              ">Huyền Huyễn
+          </span>
+          <br /><br />
+          <p data-i18n="description-zh" style="width: 600px">
+            Trở lại với sức mạnh bùng nổ, Na Tra tiếp tục hành trình phá bỏ
+            thiên mệnh, đối đầu với những thế lực cổ xưa đầy quyền năng. Giữa
+            biển trời hỗn loạn, Na Tra chiến đấu để viết nên truyền thuyết mới
+            về sức mạnh và tự do.
+          </p>
+          <p>
+            <span data-i18n="cast-zh" style="color: red; font-weight: bold">Diễn viên:
+            </span>
+            <span data-i18n="cast-details-zh">Trần Hạo, Trần Cách Lâm,...</span>
+          </p>
+          <span class="d-flex"><a class="play" href="informFIlms.html" style="text-decoration: none; color: white"
+              href="">▶</a>
+            <a class="playlist" href=""><i style="text-decoration: none; color: rgb(62, 59, 59)"
+                class="fa-solid fa-book"></i></a></span>
+        </div>
+      </div>
+    </div>
+    <div class="btns position-absolute d-flex justify-content-between align-items-center" style="
+          top: 45%;
+          left: 0;
+          right: 0;
+          z-index: 4;
+          width: 100%;
+          pointer-events: none;
+        ">
+      <div id="slidePrev" style="
+            color: white;
+            font-size: 30px;
+            margin-left: 40px;
+            pointer-events: auto;
+          ">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+      <div id="slideNext" style="
+            color: white;
+            font-size: 30px;
+            margin-right: 40px;
+            pointer-events: auto;
+          ">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+    <div class="index-img" style="
+          position: absolute;
+          left: 50%;
+          bottom: 30px;
+          transform: translateX(-50%);
+          z-index: 5;
+        ">
+      <div class="index-item active"></div>
+      <div class="index-item"></div>
+      <div class="index-item"></div>
+    </div>
+  </div>
+  <script src="../src/controller/controlBanner.js"></script>
+
+  <!-- Phim đề xuất -->
+  <div class="container my-5 text-white" style="max-width: 1220px; position: relative; top: -300px; z-index: 3">
+    <h2 class="section-title" data-i18n="featured_hot">Đề Xuất Hot</h2>
+    <div class="content">
+      <div id="hotMoviesSlider" style="display: flex; width: 100%; gap: 0px">
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="../img/img-harry potter và hòn đá.jpg" alt="Phim 1" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Harry">Harry Potter</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="../img/img-sweet home.webp" alt="Phim 2" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="SweetH">Thế giới ma quái</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">40/40</span>
+            <img src="../img/img-tang hai truyen.jpg" alt="Phim 3" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TangH">Tàng hải truyện</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="../img/img-train to busan.png" alt="Phim 4" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TrainB">Chuyến tàu đến Busan</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="../img/img-ke huy diet.jpg" alt="Phim 5" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Terminator">Kẻ Hủy Diệt</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://th.bing.com/th/id/OIP._hXtbTa1X8Z_c8E-2Nam_QAAAA?rs=1&pid=ImgDetMain" alt="Phim 6" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="JohnWick">John Wick</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://pic5.iqiyipic.com/image/20240611/90/63/v_173647659_m_601_vi_m1_260_360.webp"
+              alt="Phim 7" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Shark">Cá Mập Sát Thủ</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://pic2.iqiyipic.com/image/20240611/14/cc/v_173918978_m_601_vi_m1_260_360.jpg"
+              alt="Phim 8" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="XiKuei">Tương Tây quỷ ám</p>
+        </div>
+      </div>
+
+      <div class="btnss">
+        <i class="fas fa-chevron-left icon-button" id="hotMoviesPrevBtn"></i>
+        <i class="fas fa-chevron-right icon-button" id="hotMoviesNextBtn"></i>
+      </div>
+
+    </div>
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3"></div>
+  </div>
+
+  <!-- Phim chiếu rạp -->
+  <div class="container my-5 text-white" style="max-width: 1220px; position: relative; top: -300px; z-index: 3">
+    <h2 class="section-title" data-i18n="cinema_films">Phim Chiếu Rạp</h2>
+    <div class="content">
+      <div id="cinemaMoviesSlider" style="display: flex; width: 100%; gap: 0px">
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://product.hstatic.net/200000343865/product/doraemon-tieu-thuyet_nobita-va-cuoc-phieu-luu-vao-the-gioi-trong-tranh_be6224391ef443948ceeeef4f933bec3_grande.jpg"
+              alt="Phim 1" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Doraemon">Doraemon</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://images2.thanhnien.vn/528068263637045248/2023/11/20/edit-teaser-poster-17004959248601312622703.png"
+              alt="Phim 2" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="QuyCau">Quỷ cẩu</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/474070759_1153528279763209_859487707853346932_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGZDDrEIxvLodpE3ZYr86w0857oQz1BFuzznuhDPUEW7Ah4XeAdTDHClTKg_4Q-WmrsNk6HWKsPo23sjboUspTS&_nc_ohc=LQWvng7tWTkQ7kNvwEnqQ9-&_nc_oc=Adk-okfJuZA3j8cce-njXbVH5K5Kipsx8aNuVlQd38dX9GTIqcriDrCyGyFMm7Zw0a4&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=X09iu6vvnQjrkKOurjjtwQ&oh=00_AfMUDnxfIovqkkVnnvv3AIPhmFtJZ4L1q6qDVIPKz4rlwA&oe=684C25A1"
+              alt="Phim 3" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="DLDL">Song thần chi chiến</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://kenh14cdn.com/2020/7/13/parasite-2-15946170946381762253770.jpg" alt="Phim 4" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Parasite">Ký sinh trùng</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://photo.znews.vn/w660/Uploaded/rohunaa/2024_03_14/z5248990590299_104c01f4271b977dc7a38ae1d48b95a2.jpg"
+              alt="Phim 5" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="QuatMoTrungMa">Quật mộ trùng ma</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://metiz.vn/media/poster_film/321986917_1318882765574216_8856448085308688207_n.jpg"
+              alt="Phim 6" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="NhaBaNu">Nhà bà nữ</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://image.anninhthudo.vn/w800/Uploaded/2025/reyxqmdffr/2024_08_13/cam-teaser-poster-8829.jpg"
+              alt="Phim 7" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Cam">Cám</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTqVXfjTXq-ERLaz0HNWYjrQCb40bRsj-ZVg&s"
+              alt="Phim 8" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="LinhMieu">Linh Miêu</p>
+        </div>
+      </div>
+
+      <div class="btnss">
+        <i class="fas fa-chevron-left icon-button" id="cinemaMoviesPrevBtn"></i>
+        <i class="fas fa-chevron-right icon-button" id="cinemaMoviesNextBtn"></i>
+      </div>
+    </div>
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3"></div>
+  </div>
+
+  <!-- Phim Trung Quốc -->
+  <div class="container my-5 text-white" style="max-width: 1220px; position: relative; top: -300px; z-index: 3">
+    <h2 class="section-title" data-i18n="china_films">Phim Trung Quốc</h2>
+    <div class="content">
+      <div id="chinaMoviesSlider" style="display: flex; width: 100%; gap: 0px">
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">24/24</span>
+            <img src="https://www.elle.vn/wp-content/uploads/2021/12/26/462193/phim-trung-quoc-bi-mat-noi-goc-toi.jpg"
+              alt="Phim 1" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="BiMatNoiGocToi">Bí mật nơi góc tối</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">30/30</span>
+            <img src="https://static2.vieon.vn/vieplay-image/poster_v4/2025/01/25/pq67xnp1_660x946-quynu.png"
+              alt="Phim 2" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="QuyNu">Quý nữ</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">56/56</span>
+            <img
+              src="https://www.elle.vn/wp-content/uploads/2022/07/24/489075/nhan-vat-chinh-tinh-ha-xan-lan-scaled.jpg"
+              alt="Phim 3" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TinhHanXanLan">Tinh hán xán lạn</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">56/56</span>
+            <img
+              src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/50439779_2007926962587689_1175138769133633536_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeH5EpRiYoLDGz3qnKIoPIhGI-XFQEu7qT8j5cVAS7upP0nnuLJEcdUr1c_u7JdFZffLRwQL8cVOSS5AOpmf2tkz&_nc_ohc=fMWvhKdMXyYQ7kNvwE-cugZ&_nc_oc=AdkQJe7Y8uGhrUjr_uoRsT6Pi225b2XdiJapRGSPhepjogFKH3T7rIAxPIFzfO4j-Go&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=H9JZSS0fsIARIMJJZhiRBA&oh=00_AfNb3twJNZ_ZawXdqfMM4mO5c4GZAUEt8Iqmff27ACsrQA&oe=686DB496"
+              alt="Phim 4" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TruongAnNac">Trường An Nặc</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">32/32</span>
+            <img
+              src="https://image.voh.com.vn/voh/image/2024/12/31/voh-kho-do-danh-cua-bach-kinh-dinh-va-chuong-nhuoc-nam-co-gi-13-000310.jpg?t=o"
+              alt="Phim 5" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="KhoDoDan">Khó dỗ dành</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/gruoxkT9ViGaakLlbyAT4gdbTOM.jpg" alt="Phim 6" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="HonLeCuaEm">Hôn lễ của em</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">12/12</span>
+            <img src="https://wibu47.com/images/2663.jpg" alt="Phim 7" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TinhThanBien">Tinh thần biến</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">92/?</span>
+            <img src="https://hh3dtq.org/wp-content/uploads/2024/06/tien-nghich-3248-1.jpg" alt="Phim 8" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TienNghich">Tiên nghịch</p>
+        </div>
+      </div>
+
+      <div class="btnss">
+        <i class="fas fa-chevron-left icon-button" id="chinaMoviesPrevBtn"></i>
+        <i class="fas fa-chevron-right icon-button" id="chinaMoviesNextBtn"></i>
+      </div>
+    </div>
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3"></div>
+  </div>
+
+  <!-- Phim Việt Nam -->
+  <div class="container my-5 text-white" style="max-width: 1220px; position: relative; top: -300px; z-index: 3">
+    <h2 class="section-title" data-i18n="vietnam_films">Phim Việt Nam</h2>
+    <div class="content">
+      <div id="vietnamMoviesSlider" style="display: flex; width: 100%; gap: 0px">
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">45/45</span>
+            <img
+              src="https://cdn-images.vtv.vn/thumb_w/1200/66349b6076cb4dee98746cf1/2025/02/17/cha-toi-nguoi-o-lai-96459351530056064402078.jpg"
+              alt="Phim 1" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="ChaToiNguoiO_Lai">Cha tôi người ở lại</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">56/56</span>
+            <img
+              src="https://newsmd2fr.keeng.vn/tiin/archive/imageslead/2023/03/10/jmmwd4mc7mqbdd3qgdqgggv4z5t6aebm.jpg"
+              alt="Phim 2" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="FamilyFun">Gia đình mình vui bất thình lình</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2023/5/15/em-va-trinh-16841431857351113929500.jpeg"
+              alt="Phim 3" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="EmVaTrinh">Em và Trịnh</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://metiz.vn/media/poster_film/700x1000_13_1_.jpg" alt="Phim 4" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="NguoiVoCuoiCung">Người vợ cuối cùng</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img src="https://phongcach24h.com/wp-content/uploads/2023/09/Ban-sao-Tet-o-lang-dia-nguc-poster.jpg"
+              alt="Phim 5" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="TetOLangDiaNguc">Tết ở làng địa ngục</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://cdn-i.vtcnews.vn/resize/th/upload/2025/04/02/screen-shot-2025-04-02-at-111035-am-11105748.jpg"
+              alt="Phim 6" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="DiaDao">Địa đạo</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://cdn-images.vtv.vn/thumb_w/640/562122370168008704/2023/11/28/photo-1-17011453442011344132442.jpg"
+              alt="Phim 7" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="Mai">Mai</p>
+        </div>
+        <div class="movie-card"
+          style="flex: 1 0 20%; max-width: 20%; display: flex; flex-direction:column; align-items: center;">
+          <div class="sub-movie-card">
+            <span class="movie-label">Full</span>
+            <img
+              src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/491830635_1144546534378782_3519892460537212450_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGzQprjyjepHEpyk7IFQ3vGARW6WqgcP6QBFbpaqBw_pJZBSG5gjCrQKGh6xBeIwwT4jgQ-NnHNFiuinOg1sWNi&_nc_ohc=wrjlUAAOaSMQ7kNvwEVX2fv&_nc_oc=Adms231O8VA41_dYjA_QGexxxstteUrl1d494SEw2Lq_xV9jITejQQ3potZtIPumhW0&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=mWMIvrj3HASBwx9pp_o-uw&oh=00_AfNHsr559Nk1XvioFiBqIAhoQP-H9yQUkjPPKHae7Mjx-Q&oe=684CA83C"
+              alt="Phim 8" />
+            <div class="movie-overlay">
+              <a href="informFIlms.html" class="play-button"><i class="fa-solid fa-play"></i></a>
+            </div>
+          </div>
+          <p data-i18n="NhaGiaTien">Nhà gia tiên</p>
+        </div>
+      </div>
+
+      <div class="btnss">
+        <i class="fas fa-chevron-left icon-button" id="vietnamMoviesPrevBtn"></i>
+        <i class="fas fa-chevron-right icon-button" id="vietnamMoviesNextBtn"></i>
+      </div>
+    </div>
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3"></div>
+  </div>
+
+  <script src="../src/controller/controlContent.js"></script>
+
+  <!-- Button  to top -->
+  <button type="button" class="toTop" style="
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #ff0000;
+        width: 50px;
+        height: 50px;
+      ">
+    <i style="color: white; font-size: 20px" class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="text-light pt-4 mt-5">
+    <div class="container" style="max-width: 1220px;position: relative;; top: -300px;">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 style="font-family: 'jsMath-cmti10', sans-serif; color: red">
+            BestFilms
+          </h5>
+          <p data-i18n="quality_slogan">Chất lượng sắc nét</p>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold" style="color: #f5c864" data-i18n="explore">
+            Khám phá
+          </h6>
+          <ul class="list-unstyled">
+            <li><a href="#" data-i18n="new_films2">Phim mới</a></li>
+            <li><a href="#" data-i18n="series_films">Phim bộ</a></li>
+            <li><a href="#" data-i18n="single_films">Phim lẻ</a></li>
+            <li><a href="#" data-i18n="cinema_films2">Phim chiếu rạp</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold" style="color: #f5c864" data-i18n="genre2">
+            Thể loại
+          </h6>
+          <ul class="list-unstyled">
+            <li><a href="#" data-i18n="action">Hành động</a></li>
+            <li><a href="#" data-i18n="horror">Kinh dị</a></li>
+            <li><a href="#" data-i18n="romance">Tình cảm</a></li>
+            <li><a href="#" data-i18n="fantasy">Lãng mạn</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold" style="color: #f5c864" data-i18n="help">
+            Trợ giúp
+          </h6>
+          <ul class="list-unstyled">
+            <li><a href="#" data-i18n="account">Tài khoản</a></li>
+            <li><a href="#" data-i18n="faq">Hỏi đáp</a></li>
+            <li><a href="#" data-i18n="contact">Liên hệ</a></li>
+            <li><a href="#" data-i18n="news">Tin tức</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold" style="color: #f5c864" data-i18n="policy">
+            Chính sách
+          </h6>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" data-i18n="terms_of_use">Điều khoản sử dụng</a>
+            </li>
+            <li>
+              <a href="#" data-i18n="privacy_policy">Chính sách bảo mật</a>
+            </li>
+            <li>
+              <a href="#" data-i18n="frequently_asked_questions">Câu hỏi thường gặp</a>
+            </li>
+            <li><a href="#" data-i18n="contact_ads">Liên hệ quảng cáo</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: #5c5c5c; height: 10px" />
+      <div class="row">
+        <div class="col-12 text-center">
+
+          <div style="gap: 10px; display: flex; justify-content: center; font-size: larger;">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <p data-i18n="all_rights_reserved" style="margin-bottom: 50px;">
+            &copy; Copyright 2025 BestFilms. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../asset/JQuery/jquery.js"></script>
+</body>
+
+</html>

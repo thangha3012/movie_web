@@ -1,0 +1,33 @@
+404 Chạy Ngay Đi
+Anh Không Đau
+Thiên Đường Quả Báo
+Bí Mật Không Thể Nói
+Công Tử Bạc Liêu
+Huyễn Kinh
+Làng Ăn Thịt Người
+Mickey 17
+Nghề Siêu Khó Nói
+Sắc Màu Của Cảm Xúc
+Thiên Đường Quả Báo
+Vị Vua Mạnh Nhất Làm Gì Ở Kiếp Thứ 2
+Vô Ưu Đô
+Xin Hãy Kết Hôn Với Tôi
+
+<div class="film-item">
+    <div class="film-poster">
+        <div class="movie-thumbnail"
+            onclick="createRipple(event);window.location.href='mau5.html';">
+            <img src="image/kiem-lai-thumb.jpg" alt="Kiếm Lai">
+            <div class="quality-badge">HD</div>
+            <div class="episode-count">24/24</div>
+            <div class="overlay-item">
+                <div class="play-circle">
+                    <div class="play-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="film-info">
+        <h3><a class="film-title" href="#">Kiếm Lai</a></h3>
+    </div>
+</div>

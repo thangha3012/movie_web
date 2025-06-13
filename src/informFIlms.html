@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee và PuppyCat</title>
+    <link href="https://fonts.cdnfonts.com/css/jsmath-cmti10" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/style/style-phimmoi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../asset/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/style/styleWatch.css">
+    <link rel="stylesheet" href="../asset/Bootstrap/css/bootstrap.min.css">
+    <script src="../asset/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: black;
+            padding-top: 60px;
+            /* Thêm padding-top bằng chiều cao của navbar */
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="../asset/JQuery/jquery.js"></script>
+    <script src="../asset/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/controller/main.js"></script>
+    <nav class="navbar navbar-expand-sm navbar-light p-0" style="position: fixed;background-color: black;">
+        <div class="container" style="height: 60px; max-width: 1220px; background-color: black;">
+            <a class="navbar-brand" href="home.html">
+                <img style="height: 60px; width: 60px" class="logo" src="../img/logo1-removebg-preview.png"
+                    alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarID">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="home.html" data-i18n="home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="phimmoi.html" data-i18n="new_films">Phim Mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="thinhhanh.html" data-i18n="trending">Thịnh Hành</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="genre">Thể
+                            Loại</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newCartoon" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hoạt Hình</a>
+                                    <a data-i18n="newRomance" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Tình
+                                        Cảm</a>
+                                    <a data-i18n="newHistorical" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Cổ trang</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newFantasy" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Viễn tưởng</a>
+                                    <a data-i18n="newWar" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Chiến Tranh</a>
+                                    <a data-i18n="newAction" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hành động</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newAdventure" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Phiêu Lưu</a>
+                                    <a data-i18n="newMartialArts" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Võ Thuật</a>
+                                    <a data-i18n="newHorror" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Kinh dị</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="country">Quốc
+                            Gia</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newWestern" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Âu Mỹ</a>
+                                    <a data-i18n="newChinese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Trung Quốc</a>
+                                    <a data-i18n="newKorean" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hàn Quốc</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newThai" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Thái Lan</a>
+                                    <a data-i18n="newVietnamese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Việt Nam</a>
+                                    <a data-i18n="newJapanese" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Nhật Bản</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newIndonesian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Indonesia</a>
+                                    <a data-i18n="newCambodian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Campuchia</a>
+                                    <a data-i18n="newLaotian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Lào</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex align-items-center ms-3">
+                <div class="search-box">
+                    <input id="search-input" type="text" placeholder="Tìm kiếm"
+                        data-i18n-placeholder="search_placeholder" />
+                    <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="position-relative">
+                    <a class="ms-3 text-light" id="languageToggle" style="display: inline-block; cursor: pointer"><i
+                            class="fa-solid fa-globe" style="font-size: 23px"></i></a>
+
+                    <div id="languageDropdown" style="
+                display: none;
+                position: absolute;
+                top: 42px;
+                background-color: rgba(0, 0, 0, 0.7);
+              ">
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="vi" data-i18n="vietnamese">Tiếng Việt</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="en" data-i18n="english">English</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="zh" data-i18n="chinese_simplified">简体中文</a></span>
+                    </div>
+                </div>
+
+                <a href="#" class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="fa-solid fa-user large-icon" style="font-size: 23px"></i>
+                </a>
+            </form>
+        </div>
+    </nav>
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel" data-i18n="welcome_message">
+                        Chào mừng bạn!
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" class="auth-form">
+                        <h2 class="text-center mb-4" data-i18n="login">Đăng nhập</h2>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput"
+                                placeholder="name@example.com" />
+                            <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                                <span data-i18n="account">Tài khoản</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                            <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="password">Password</span></label>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <input type="checkbox" id="rememberMe" />
+                                <label for="rememberMe" data-i18n="remember_me">Ghi nhớ</label>
+                            </div>
+                            <a href="#" data-i18n="forgot_password">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" data-i18n="login">
+                            Đăng nhập
+                        </button>
+                        <p class="text-center mt-3" data-i18n="or_login_with">
+                            Hoặc đăng nhập bằng
+                        </p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </button>
+                            <button type="button" class="btn btn-outline-danger">
+                                <i class="fa-brands fa-google"></i> Google
+                            </button>
+                        </div>
+                        <p class="text-center mt-3">
+                            <span data-i18n="no_account_yet">Chưa có tài khoản?</span>
+                            <a href="#" id="showRegisterForm" data-i18n="register">Đăng ký</a>
+                        </p>
+                    </form>
+
+                    <form id="registerForm" class="auth-form d-none">
+                        <h2 class="text-center mb-4" data-i18n="register">Đăng ký</h2>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput"
+                                placeholder="name@example.com" />
+                            <label for="floatingInput"><i class="fa-solid fa-user large-icon"></i>
+                                <span data-i18n="account">Tài khoản</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                            <label for="floatingPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="password">Password</span></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Password" />
+                            <label for="confirmPassword"><i class="fa-solid fa-lock"></i>
+                                <span data-i18n="confirm_password">Xác nhận Mật khẩu</span></label>
+                        </div>
+                        <button type="submit" class="btn btn-secondary w-100" data-i18n="register">
+                            Đăng ký
+                        </button>
+                        <p class="text-center mt-3" data-i18n="or_register_with">
+                            Hoặc đăng ký bằng
+                        </p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </button>
+                            <button type="button" class="btn btn-outline-danger">
+                                <i class="fa-brands fa-google"></i> Google
+                            </button>
+                        </div>
+                        <p class="text-center mt-3">
+                            <span data-i18n="already_have_account">Đã có tài khoản?</span>
+                            <a href="#" id="showLoginForm" data-i18n="login">Đăng nhập</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4" style="max-width: 1220px;">
+        <div class="row">
+
+            <div class="col-md-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="home.html" class="text-decoration-none text-light" data-i18n="watch_movie">
+                                <i class="fa fa-home"></i> Xem Phim
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-decoration-none text-light" data-i18n="euro_american">Âu Mỹ</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-decoration-none text-light" data-i18n="comedy">Hài Hước</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-decoration-none text-light" data-i18n="sci_fi">Viễn Tưởng</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-decoration-none text-light" data-i18n="science">Khoa Học</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-decoration-none text-light" data-i18n="animation">Hoạt Hình</a>
+                        </li>
+                        <li class="breadcrumb-item active text-warning" aria-current="page"
+                            data-i18n="bee_and_puppycat">
+                            Bee và PuppyCat
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://i.redd.it/sf2yfbzqek4c1.jpg" class="img-fluid rounded poster"
+                                alt="Poster phim">
+                        </div>
+                        <div class="col-md-8 film-details text-white">
+                            <h2>Bee và PuppyCat</h2>
+                            <span class="badge bg-danger">Tập 1</span>
+                            <p>2024 - Nhật Bản - Phim bộ</p>
+                            <p>Thể loại: Hoạt Hình</p>
+                            <p><strong>Đánh giá:</strong> <span style="color: gold;">★★★★★</span> <span
+                                    class="text-white">(100 điểm / 20 lượt)</span></p>
+                            <div class="d-flex my-3">
+                                <button class="btn btn-success me-2"><a href="watchMovie.html"
+                                        style="text-decoration: none; color: white;">▶ Xem phim</a></button>
+                                <button class="btn btn-danger me-2">▶ Xem trailer</button>
+                                <button class="btn btn-light"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                            <div class="tabs mb-3">
+                                <button class="btn btn-secondary me-2">Tập Phim</button>
+                                <button class="btn btn-secondary me-2">Thông Tin</button>
+                                <button class="btn btn-secondary">Diễn viên</button>
+                            </div>
+                            <div class="episode-list">
+                                <button class="btn btn-warning">Tập 1</button>
+                                <button class="btn btn-dark">Tập 2</button>
+                                <button class="btn btn-dark">Tập 3</button>
+                                <button class="btn btn-dark">Tập 4</button>
+                                <button class="btn btn-dark">Tập 5</button>
+                                <button class="btn btn-dark">Tập 6</button>
+                                <button class="btn btn-dark">>></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <section class="mb-4">
+                    <h6 class="text-light mb-3" data-i18n="you_may_want_to_watch">Có thể bạn muốn xem</h6>
+                    <div class="slider-container">
+                        <button class="nav-btn prev-btn">&lt;</button>
+                        <div class="slider" id="movieSlider">
+                            <a href="#" class="movie-card">
+                                <div class="img-wrapper">
+                                    <img src="../img/Ảnh/g1.jpg" alt="Masamune-kun" />
+                                    <div class="overlay">
+                                        <span class="play-icon">&#9658;</span>
+                                    </div>
+                                </div>
+                                <div class="movie-title" data-i18n="masamune_kun_revenge">Sự trả thù của Masamune-kun
+                                </div>
+                            </a>
+                            <a href="#" class="movie-card">
+                                <div class="img-wrapper">
+                                    <img src="../img/Ảnh/g2.jpg" alt="Orion" />
+                                    <div class="overlay">
+                                        <span class="play-icon">&#9658;</span>
+                                    </div>
+                                </div>
+                                <div class="movie-title" data-i18n="orion_and_the_dark">Orion và Bóng Tối</div>
+                            </a>
+                            <a href="#" class="movie-card">
+                                <div class="img-wrapper">
+                                    <img src="../img/Ảnh/g3.jpg" alt="Frozen Fever" />
+                                    <div class="overlay">
+                                        <span class="play-icon">&#9658;</span>
+                                    </div>
+                                </div>
+                                <div class="movie-title" data-i18n="frozen_fever">Frozen Fever</div>
+                            </a>
+                            <a href="#" class="movie-card">
+                                <div class="img-wrapper">
+                                    <img src="../img/Ảnh/g4.jpg" alt="Tóc Mây" />
+                                    <div class="overlay">
+                                        <span class="play-icon">&#9658;</span>
+                                    </div>
+                                </div>
+                                <div class="movie-title" data-i18n="tangled">Công Chúa Tóc Mây</div>
+                            </a>
+                            <a href="#" class="movie-card">
+                                <div class="img-wrapper">
+                                    <img src="../img/Ảnh/g5.jpg" alt="Cầu Vồng" />
+                                    <div class="overlay">
+                                        <span class="play-icon">&#9658;</span>
+                                    </div>
+                                </div>
+                                <div class="movie-title" data-i18n="rainbow_kingdom_legend">Truyền thuyết Vương quốc Cầu
+                                    vồng</div>
+                            </a>
+                        </div>
+                        <button class="nav-btn next-btn">&gt;</button>
+                    </div>
+                </section>
+
+
+                <section class="mb-5">
+                    <h6 class="text-light mb-3" data-i18n="comments">Bình luận</h6>
+                    <div class="bg-dark p-3 rounded shadow-sm">
+                        <div class="d-flex mb-3">
+                            <img src="https://i.pravatar.cc/40" class="rounded-circle me-2" width="40" height="40">
+                            <textarea class="form-control" rows="3" placeholder="Viết bình luận..." id="commentInput"
+                                data-i18n-placeholder="write_comment"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-warning" id="sendCommentBtn" data-i18n="send">Gửi</button>
+                        </div>
+                        <div class="mt-4" id="commentList">
+                            <div class="d-flex mb-3">
+                                <img src="https://i.pravatar.cc/41" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <div class="fw-bold text-warning" data-i18n="nguyen_minh">Nguyễn Minh</div>
+                                    <div class="text-light" data-i18n="movie_great_expect_next">Phim hay quá! Mong chờ
+                                        tập tiếp theo.</div>
+                                    <div class="small text-muted" data-i18n="minutes_ago">1 phút trước</div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <img src="https://i.pravatar.cc/42" class="rounded-circle me-2" width="40" height="40">
+                                <div>
+                                    <div class="fw-bold text-warning" data-i18n="hoang_truc">Hoàng Trúc</div>
+                                    <div class="text-light" data-i18n="unique_animation_style">Phong cách hoạt hình rất
+                                        độc đáo luôn ấy!</div>
+                                    <div class="small text-muted" data-i18n="minutes_ago_5">5 phút trước</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-3">
+                <div class="bg-dark text-white p-3 rounded" style="width: 280px;">
+
+                    <div class="mb-4">
+                        <h6 class="text-uppercase text-light fw-bold mb-3 border-bottom pb-1" style="font-size: 13px;">
+                            <i class="fas fa-film me-2 text-danger"></i><span data-i18n="upcoming_movies">Phim sắp
+                                chiếu</span>
+                        </h6>
+
+                        <div class="d-flex flex-column gap-3">
+                            <a href="#" class="d-flex text-decoration-none">
+                                <img src="../img/Ảnh/right/1.jpg" alt="..." class="rounded me-2"
+                                    style="width: 90px; height: 60px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <div class="fw-semibold text-warning small" data-i18n="throne_of_seal_movie">THẦN ẤN
+                                        VƯƠNG TỌA: TRUYỆN KỲ...</div>
+                                    <div class="text-muted small" data-i18n="throne_of_seal_movie_english">Throne of
+                                        Seal The Movie...</div>
+                                </div>
+                            </a>
+                            <a href="#" class="d-flex text-decoration-none">
+                                <img src="../img/Ảnh/right/2.jpg" alt="..." class="rounded me-2"
+                                    style="width: 90px; height: 60px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <div class="fw-semibold text-warning small" data-i18n="ne_zha_2">NA TRA 2: MA ĐỒNG
+                                        NÁO HẢI</div>
+                                    <div class="text-muted small" data-i18n="ne_zha_2_year">Ne Zha 2 (2025)</div>
+                                </div>
+                            </a>
+                            <a href="#" class="d-flex text-decoration-none">
+                                <img src="../img/Ảnh/right/3.jpg" alt="..." class="rounded me-2"
+                                    style="width: 90px; height: 60px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <div class="fw-semibold text-warning small" data-i18n="solo_leveling_season_2">THĂNG
+                                        CẤP MỘT MÌNH (PHẦN 2)</div>
+                                    <div class="text-muted small" data-i18n="solo_leveling_season_2_english">Solo
+                                        Leveling (Season 2)</div>
+                                </div>
+                            </a>
+                            <a href="#" class="d-flex text-decoration-none">
+                                <img src="../img/Ảnh/right/4.jpg" alt="..." class="rounded me-2"
+                                    style="width: 90px; height: 60px; object-fit: cover;">
+                                <div class="flex-grow-1">
+                                    <div class="fw-semibold text-warning small" data-i18n="swallowed_star_movie">THÔN
+                                        PHỆ TINH KHÔNG: HUYẾT LẠC...</div>
+                                    <div class="text-muted small" data-i18n="swallowed_star_movie_english">Swallowed
+                                        Star The Movie</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="text-uppercase text-light fw-bold mb-3 border-bottom pb-1" style="font-size: 13px;">
+                            <i class="fas fa-medal me-2 text-info"></i><span data-i18n="top_single_films">Top phim
+                                lẻ</span>
+                        </h6>
+                        <ul class="list-unstyled small">
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="solo_leveling_season_2_full">Thăng Cấp Một Mình (Phần
+                                    2)</a>
+                                <span class="badge bg-secondary" data-i18n="trailer">Trailer</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="ne_zha_2_full">Na Tra 2: Ma Đồng Náo
+                                    Hải</a>
+                                <span class="badge bg-secondary" data-i18n="trailer">Trailer</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="detective_conan_iron_jail">Thám Tử Lừng Danh Conan:
+                                    Ngục Tù
+                                    Sắt</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1" data-i18n="moana_2">Hành
+                                    Trình Của Moana
+                                    2</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="pirate_sea_king">Hải Tặc: Vua Hải
+                                    Dương</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="kung_fu_panda_4">Kung Fu Panda 4</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="one_piece_film_red">One Piece Film: Red</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1" data-i18n="comrade">Đồng
+                                    Chí</a>
+                                <span class="badge bg-success" data-i18n="full">Full</span>
+                            </li>
+                            <li
+                                class="d-flex justify-content-between align-items-center py-1 border-bottom hover-highlight">
+                                <a href="#" class="text-white text-decoration-none flex-grow-1"
+                                    data-i18n="seven_deadly_sins_four_knights_of_the_apocalypse">Thất Hình Đại Tội: Tứ
+                                    Kỵ
+                                    Sĩ Khải
+                                    Hoàn</a>
+                                <span class="badge bg-secondary" data-i18n="trailer">Trailer</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h6 class="text-uppercase text-light fw-bold mb-3 border-bottom pb-1" style="font-size: 13px;">
+                            <i class="fas fa-list-ol me-2 text-warning"></i><span data-i18n="top_series_films">Top phim
+                                bộ</span>
+                        </h6>
+                        <div class="d-flex flex-column gap-3 small">
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/4.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="one_piece">Đảo Hải Tặc</div>
+                                    <div class="text-muted small" data-i18n="rating_views_one_piece">★9.8 | 108,659
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/5.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="pokemon_all_series">Pokemon Tổng Hợp</div>
+                                    <div class="text-muted small" data-i18n="rating_views_pokemon">★10.0 | 91,986</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/6.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="detective_conan">Thám Tử Lừng Danh Conan</div>
+                                    <div class="text-muted small" data-i18n="rating_views_conan">★9.7 | 86,620</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/7.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="naruto_shippuden">Naruto Shippuden</div>
+                                    <div class="text-muted small" data-i18n="rating_views_naruto">★9.8 | 95,601</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/8.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="tom_and_jerry">Tom và Jerry</div>
+                                    <div class="text-muted small" data-i18n="rating_views_tom_jerry">★8.7 | 34,744</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/9.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="soul_land">Đấu La Đại Lục</div>
+                                    <div class="text-muted small" data-i18n="rating_views_soul_land">★10.0 | 26,798
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/10.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="sengoku_otogizoushi_inuyasha">Sengoku Otogizoushi
+                                        Inuyasha</div>
+                                    <div class="text-muted small" data-i18n="rating_views_inuyasha">★9.6 | 22,755</div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/11.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="inuyasha">Khuyển Dạ Xoa</div>
+                                    <div class="text-muted small" data-i18n="rating_views_inuyasha_2">★9.0 | 23,065
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="d-flex align-items-center text-decoration-none text-white hover-highlight">
+                                <img src="../img/Ảnh/right/12.jpg" class="me-2 rounded"
+                                    style="width: 40px; height: 55px; object-fit: cover;">
+                                <div>
+                                    <div class="fw-bold" data-i18n="shijou_saikyou_no_deshi_kenichi">Shijou Saikyou no
+                                        Deshi Kenichi</div>
+                                    <div class="text-muted small" data-i18n="rating_views_kenichi">★10.0 | 27,124</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="toTop" style="
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: #ff0000;
+        width: 50px;
+        height: 50px;
+      ">
+        <i style="color: white; font-size: 20px" class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <footer class="text-light pt-4 mt-5">
+        <div class="container" style="max-width: 1220px;position: relative; background-color: black;">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 style="font-family: 'jsMath-cmti10', sans-serif; color: red">
+                        BestFilms
+                    </h5>
+                    <p data-i18n="quality_slogan">Chất lượng sắc nét</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="explore">
+                        Khám phá
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="new_films2">Phim mới</a></li>
+                        <li><a href="#" data-i18n="series_films">Phim bộ</a></li>
+                        <li><a href="#" data-i18n="single_films">Phim lẻ</a></li>
+                        <li><a href="#" data-i18n="cinema_films2">Phim chiếu rạp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="genre2">
+                        Thể loại
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="action">Hành động</a></li>
+                        <li><a href="#" data-i18n="horror">Kinh dị</a></li>
+                        <li><a href="#" data-i18n="romance">Tình cảm</a></li>
+                        <li><a href="#" data-i18n="fantasy">Lãng mạn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="help">
+                        Trợ giúp
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-i18n="account">Tài khoản</a></li>
+                        <li><a href="#" data-i18n="faq">Hỏi đáp</a></li>
+                        <li><a href="#" data-i18n="contact">Liên hệ</a></li>
+                        <li><a href="#" data-i18n="news">Tin tức</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold" style="color: #f5c864" data-i18n="policy">
+                        Chính sách
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" data-i18n="terms_of_use">Điều khoản sử dụng</a>
+                        </li>
+                        <li>
+                            <a href="#" data-i18n="privacy_policy">Chính sách bảo mật</a>
+                        </li>
+                        <li>
+                            <a href="#" data-i18n="frequently_asked_questions">Câu hỏi thường gặp</a>
+                        </li>
+                        <li><a href="#" data-i18n="contact_ads">Liên hệ quảng cáo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #5c5c5c; height: 10px" />
+            <div class="row">
+                <div class="col-12 text-center">
+
+                    <div style="gap: 10px; display: flex; justify-content: center; font-size: larger;">
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p data-i18n="all_rights_reserved" style="margin-bottom: 50px;">
+                        &copy; Copyright 2025 BestFilms. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const cardWidth = 200;
+        let scrollAmount = 0;
+
+        const $slider = $("#movieSlider");
+        const $nextBtn = $(".next-btn");
+        const $prevBtn = $(".prev-btn");
+
+        $nextBtn.on("click", function () {
+            scrollAmount += cardWidth;
+            $slider.css("transform", `translateX(-${scrollAmount}px)`);
+        });
+
+        $prevBtn.on("click", function () {
+            scrollAmount = Math.max(0, scrollAmount - cardWidth);
+            $slider.css("transform", `translateX(-${scrollAmount}px)`);
+        });
+
+        const $videoPlayer = $("#videoPlayer");
+        const $episodeButtons = $(".episode-btn");
+
+        $episodeButtons.on("click", function () {
+            $episodeButtons.removeClass("active");
+            $(this).addClass("active");
+            const src = $(this).data("src");
+            $videoPlayer.find("source").attr("src", src);
+            $videoPlayer[0].load();
+            $videoPlayer[0].play();
+        });
+
+        const $toggleThemeBtn = $("#toggle-theme");
+        let dark = false;
+
+        $toggleThemeBtn.on("click", function () {
+            $("body").toggleClass("dark-mode");
+            dark = !dark;
+            $toggleThemeBtn.html(
+                dark
+                    ? '<i class="fas fa-lightbulb text-warning"></i> <span data-i18n="turn_on_lights">Bật đèn</span>'
+                    : '<i class="fas fa-lightbulb"></i> <span data-i18n="turn_off_lights">Tắt đèn</span>'
+            );
+            $toggleThemeBtn.toggleClass("btn-secondary btn-light");
+        });
+
+        $("#sendCommentBtn").on("click", function () {
+            const $commentInput = $("#commentInput");
+            const $commentList = $("#commentList");
+            const content = $commentInput.val().trim();
+            if (content) {
+                const $newComment = $(`
+                    <div class="d-flex mb-3">
+                        <img src="https://i.pravatar.cc/43" class="rounded-circle me-2" width="40" height="40">
+                        <div>
+                            <div class="fw-bold text-warning" data-i18n="you">Bạn</div>
+                            <div class="text-light"></div>
+                            <div class="small text-muted" data-i18n="just_now">Vừa xong</div>
+                        </div>
+                    </div>
+                `);
+                $newComment.find(".text-light").text(content);
+                $commentList.prepend($newComment);
+                $commentInput.val('');
+            }
+        });
+    </script>
+</body>
+
+</html>
