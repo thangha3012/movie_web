@@ -13,7 +13,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_drop_down" />
   <link rel="stylesheet" href="src/style/home.css" />
-
+  <script src="asset/JQuery/jquery.js"></script>
   <link href="https://fonts.cdnfonts.com/css/jsmath-cmti10" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,124 +65,128 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-light p-0" style="position: fixed;background-color: black;">
-    <div class="container" style="height: 60px; max-width: 1220px; background-color: black;">
-      <a class="navbar-brand" href="index.html">
-        <img style="height: 60px; width: 60px" class="logo" src="img/logo1-removebg-preview.png" alt="Logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
-        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarID">
-        <ul class="navbar-nav gap-3">
-          <li class="nav-item">
-            <a class="nav-link text-light" href="index.html" data-i18n="home">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="phimmoi.html" data-i18n="new_films">Phim Mới</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="thinhhanh.html" data-i18n="trending">Thịnh Hành</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown" data-i18n="genre">Thể
-              Loại</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a data-i18n="newCartoon" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hoạt Hình</a>
-                  <a data-i18n="newRomance" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Tình
-                    Cảm</a>
-                  <a data-i18n="newHistorical" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Cổ trang</a>
-                </div>
-                <div class="col-sm-4">
-                  <a data-i18n="newFantasy" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Viễn tưởng</a>
-                  <a data-i18n="newWar" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Chiến Tranh</a>
-                  <a data-i18n="newAction" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Hành động</a>
-                </div>
-                <div class="col-sm-4">
-                  <a data-i18n="newAdventure" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Phiêu Lưu</a>
-                  <a data-i18n="newMartialArts" class="dropdown-item" href="phimAuMy.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Võ Thuật</a>
-                  <a data-i18n="newHorror" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Kinh dị</a>
-                </div>
-              </div>
+        <div class="container" style="height: 60px; max-width: 1220px; background-color: black;">
+            <a class="navbar-brand" href="index.html">
+                <img style="height: 60px; width: 60px" class="logo" src="img/logo1-removebg-preview.png"
+                    alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarID">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.html" data-i18n="home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="phimmoi.html" data-i18n="new_films">Phim Mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="thinhhanh.html" data-i18n="trending">Thịnh Hành</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="genre">Thể
+                            Loại</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newCartoon" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hoạt Hình</a>
+                                    <a data-i18n="newRomance" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Tình
+                                        Cảm</a>
+                                    <a data-i18n="newHistorical" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Cổ trang</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newFantasy" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Viễn tưởng</a>
+                                    <a data-i18n="newWar" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Chiến Tranh</a>
+                                    <a data-i18n="newAction" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hành động</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newAdventure" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Phiêu Lưu</a>
+                                    <a data-i18n="newMartialArts" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Võ Thuật</a>
+                                    <a data-i18n="newHorror" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Kinh dị</a>
+                                </div>
+                            </div>
 
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown"
+                            data-i18n="country">Quốc
+                            Gia</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a data-i18n="newWestern" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Âu Mỹ</a>
+                                    <a data-i18n="newChinese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Trung Quốc</a>
+                                    <a data-i18n="newKorean" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Hàn Quốc</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newThai" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Thái Lan</a>
+                                    <a data-i18n="newVietnamese" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Việt Nam</a>
+                                    <a data-i18n="newJapanese" class="dropdown-item" href="phimHoatHinh.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Nhật Bản</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a data-i18n="newIndonesian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Indonesia</a>
+                                    <a data-i18n="newCambodian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Campuchia</a>
+                                    <a data-i18n="newLaotian" class="dropdown-item" href="phimAuMy.html"><i
+                                            class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Lào</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown" data-i18n="country">Quốc
-              Gia</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a data-i18n="newWestern" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Âu Mỹ</a>
-                  <a data-i18n="newChinese" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Trung Quốc</a>
-                  <a data-i18n="newKorean" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Hàn Quốc</a>
+            <form class="d-flex align-items-center ms-3">
+                <div class="search-box">
+                    <input id="search-input" type="text" placeholder="Tìm kiếm"
+                        data-i18n-placeholder="search_placeholder" />
+                    <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="col-sm-4">
-                  <a data-i18n="newThai" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Thái Lan</a>
-                  <a data-i18n="newVietnamese" class="dropdown-item" href="phimAuMy.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Việt Nam</a>
-                  <a data-i18n="newJapanese" class="dropdown-item" href="phimHoatHinh.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Nhật Bản</a>
-                </div>
-                <div class="col-sm-4">
-                  <a data-i18n="newIndonesian" class="dropdown-item" href="phimAuMy.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Indonesia</a>
-                  <a data-i18n="newCambodian" class="dropdown-item" href="phimAuMy.html"><i
-                      class="fa-solid fa-play fa-xs" style="color: #ffffff;"></i> Campuchia</a>
-                  <a data-i18n="newLaotian" class="dropdown-item" href="phimAuMy.html"><i class="fa-solid fa-play fa-xs"
-                      style="color: #ffffff;"></i> Lào</a>
-                </div>
-              </div>
+                <div class="position-relative">
+                    <a class="ms-3 text-light" id="languageToggle" style="display: inline-block; cursor: pointer"><i
+                            class="fa-solid fa-globe" style="font-size: 23px"></i></a>
 
-            </div>
-          </li>
-        </ul>
-      </div>
-      <form class="d-flex align-items-center ms-3">
-        <div class="search-box">
-          <input id="search-input" type="text" placeholder="Tìm kiếm" data-i18n-placeholder="search_placeholder" />
-          <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        <div class="position-relative">
-          <a class="ms-3 text-light" id="languageToggle" style="display: inline-block; cursor: pointer"><i
-              class="fa-solid fa-globe" style="font-size: 23px"></i></a>
-
-          <div id="languageDropdown" style="
+                    <div id="languageDropdown" style="
                 display: none;
                 position: absolute;
                 top: 42px;
                 background-color: rgba(0, 0, 0, 0.7);
               ">
-            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="vi"
-                data-i18n="vietnamese">Tiếng Việt</a></span>
-            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="en"
-                data-i18n="english">English</a></span>
-            <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#" data-lang="zh"
-                data-i18n="chinese_simplified">简体中文</a></span>
-          </div>
-        </div>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="vi" data-i18n="vietnamese">Tiếng Việt</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="en" data-i18n="english">English</a></span>
+                        <span><a style="padding: 7px 15px" class="dropdown-item text-white lang-select" href="#"
+                                data-lang="zh" data-i18n="chinese_simplified">简体中文</a></span>
+                    </div>
+                </div>
 
-        <a href="#" class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#authModal">
-          <i class="fa-solid fa-user large-icon" style="font-size: 23px"></i>
-        </a>
-      </form>
-    </div>
-  </nav>
+                <a href="#" class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="fa-solid fa-user large-icon" style="font-size: 23px"></i>
+                </a>
+            </form>
+        </div>
+    </nav>
 
   <!-- Modal Đăng Nhập -->
   <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
@@ -1146,7 +1150,6 @@
     </div>
   </footer>
 
-  <script src="asset/JQuery/jquery.js"></script>
 </body>
 
 </html>

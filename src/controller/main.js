@@ -35,7 +35,7 @@ $(document).ready(function () {
     // Language switching logic
     function loadLanguage(lang) { 
         $.ajax({
-            url: `languages/${lang}.json`,
+            url: `src/languages/${lang}.json`,
             dataType: 'json',
             success: function (data) {
                 $('[data-i18n]').each(function () {
